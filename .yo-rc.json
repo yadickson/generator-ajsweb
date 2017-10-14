@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Yadickson Soto",
+      "authorEmail": "yadickson@gmail.com",
+      "authorUrl": "https://github.com/yadickson"
+    }
+  }
+}
