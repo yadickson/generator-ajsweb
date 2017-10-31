@@ -16,11 +16,6 @@ describe('generator-angularng:app', () => {
                 .on('end', done);
         });
 
-        it('creates files', () => {
-            assert.file(['gulpfile.js']);
-            assert.file(['package.json']);
-        });
-
         it('should contain necessary dependencies', () => {
             [
                 'bootstrap',

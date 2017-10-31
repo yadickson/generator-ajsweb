@@ -26,7 +26,7 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'name',
             message: 'Your project name',
-            default: this.appname
+            default: this.appname.replace(/\s+/g, '-')
         }, {
             type: 'input',
             name: 'version',
@@ -74,6 +74,9 @@ module.exports = class extends Generator {
             this.name = props.name;
             this.version = props.version;
             this.description = props.description;
+            this.main = props.main;
+            this.author = props.author;
+            this.license = props.license;
             this.includeSass = hasFeature('includeSass');
             this.includeBootstrap = hasFeature('includeBootstrap');
 
@@ -119,6 +122,9 @@ module.exports = class extends Generator {
                 name: this.name,
                 version: this.version,
                 description: this.description,
+                main: this.main,
+                author: this.author,
+                license: this.license,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
             }
