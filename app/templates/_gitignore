@@ -1,0 +1,9 @@
+node_modules
+build/
+dist/
+coverage/
+reports/
+package-lock.json
+yarn*
+*.tgz
+.karma.conf.js

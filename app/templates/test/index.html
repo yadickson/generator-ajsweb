@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Spec Runner</title>
+
+  <!-- mocha:css -->
+  <!-- endinject -->
+
+</head>
+
+<body>
+  <!-- mocha:js -->
+  <!-- endinject -->
+
+  <div id="mocha"></div>
+
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script>
+    var assert = chai.assert;
+    var expect = chai.expect;
+    var should = chai.should();
+  </script>
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <script>
+    if (navigator.userAgent.indexOf('PhantomJS') === -1) {
+      mocha.run();
+    }
+  </script>
+</body>
+
+</html>
