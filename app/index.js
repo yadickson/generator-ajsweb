@@ -90,6 +90,8 @@ module.exports = class extends Generator {
         this._writingGitIgnore();
         this._writingKarmaConfig();
         this._writingTravisConfig();
+        this._writingIcon();
+        this._writingImages();
     }
 
     _writingReadme() {
@@ -134,7 +136,8 @@ module.exports = class extends Generator {
     _writingGitIgnore() {
         this.fs.copy(
             this.templatePath('_gitignore'),
-            this.destinationPath('.gitignore'));
+            this.destinationPath('.gitignore')
+        );
     }
 
     _writingKarmaConfig() {
@@ -147,16 +150,30 @@ module.exports = class extends Generator {
     _writingTravisConfig() {
         this.fs.copy(
             this.templatePath('_travis.yml'),
-            this.destinationPath('.travis.yml'));
+            this.destinationPath('.travis.yml')
+        );
+    }
+
+    _writingIcon() {
+        this.fs.copy(
+            this.templatePath('app/favicon.ico'),
+            this.destinationPath('app/favicon.ico')
+        );
+    }
+
+    _writingImages() {
+        this.fs.copy(
+            this.templatePath('app/images/image.png'),
+            this.destinationPath('app/images/image.png')
+        );
     }
 
     install() {
-        /*
-                const hasYarn = commandExists('yarn');
-                this.installDependencies({
-                    npm: !hasYarn,
-                    bower: false,
-                    yarn: hasYarn
-                });*/
+        const hasYarn = commandExists('yarn');
+        this.installDependencies({
+            npm: !hasYarn,
+            bower: false,
+            yarn: hasYarn
+        });
     }
 };
