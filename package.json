@@ -9,7 +9,8 @@
         "url": "https://github.com/yadickson"
     },
     "files": [
-        "app"
+        "app",
+        "controller"
     ],
     "main": "app/index.js",
     "keywords": [

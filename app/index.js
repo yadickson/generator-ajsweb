@@ -9,6 +9,9 @@ module.exports = class extends Generator {
 
     constructor(args, opts) {
         super(args, opts);
+        
+        this.argument('appname', { type: String, required: false });
+        this.appname = this.options.appname || this.appname;
     }
 
     initializing() {
@@ -26,7 +29,7 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'name',
             message: 'Your project name',
-            default: this.appname.replace(/\s+/g, '-')
+            default: this.appname
         }, {
             type: 'input',
             name: 'version',
