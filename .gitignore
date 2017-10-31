@@ -58,6 +58,7 @@ typings/
 .env
 
 build/
+dist/
 
 reports/
 package-lock.json

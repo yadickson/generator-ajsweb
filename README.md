@@ -1,5 +1,12 @@
-# generator-angularng [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-angularng
 > Yeoman Gulp generator for AngularJS 
+
+[![TravisCI Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![dependencies][dependencies-image]][dependencies-url]
+[![dev-dependencies][dev-dependencies-image]][dev-dependencies-url]
+[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
+[![npm version][npm-image]][npm-url]
 
 ## Installation
 
@@ -28,11 +35,20 @@ yo angularng
 GPL-3.0 © [Yadickson Soto](https://github.com/yadickson)
 
 
-[npm-image]: https://badge.fury.io/js/generator-angularng.svg
-[npm-url]: https://npmjs.org/package/generator-angularng
-[travis-image]: https://travis-ci.org/yadickson/generator-angularng.svg?branch=master
+[travis-image]: https://travis-ci.org/yadickson/generator-angularng.svg
 [travis-url]: https://travis-ci.org/yadickson/generator-angularng
-[daviddm-image]: https://david-dm.org/yadickson/generator-angularng.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/yadickson/generator-angularng
-[coveralls-image]: https://coveralls.io/repos/yadickson/generator-angularng/badge.svg
-[coveralls-url]: https://coveralls.io/r/yadickson/generator-angularng
+
+[coveralls-image]: https://coveralls.io/repos/github/yadickson/generator-angularng/badge.svg
+[coveralls-url]: https://coveralls.io/github/yadickson/generator-angularng
+
+[dependencies-image]: https://david-dm.org/yadickson/generator-angularng/status.svg
+[dependencies-url]: https://david-dm.org/yadickson/generator-angularng?view=list
+
+[dev-dependencies-image]: https://david-dm.org/yadickson/generator-angularng/dev-status.svg
+[dev-dependencies-url]: https://david-dm.org/yadickson/generator-angularng?type=dev&view=list
+
+[vulnerabilities-image]: https://snyk.io/package/npm/generator-angularng/badge.svg
+[vulnerabilities-url]: https://snyk.io/package/npm/generator-angularng
+
+[npm-image]: https://badge.fury.io/js/generator-angularng.svg
+[npm-url]: https://badge.fury.io/js/generator-angularng
