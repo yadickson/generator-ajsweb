@@ -14,17 +14,9 @@
                         'footer@': {}
                     }
                 })
-                .state('home', {
-                    parent: 'root',
-                    url: '/home',
-                    views: {
-                        'main@': {
-                            controller: 'homeCtrl',
-                            templateUrl: 'views/home.html',
-                            controllerAs: 'vm'
-                        }
-                    }
-                });
+                // inject:routes
+                // endinject
+            ;
 
             $urlRouterProvider.otherwise('/home');
 

@@ -2,7 +2,7 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const uppercamelcase = require('uppercamelcase')
+const uppercamelcase = require('uppercamelcase');
 const decamelize = require('decamelize');
 
 module.exports = class extends Generator {
@@ -15,7 +15,11 @@ module.exports = class extends Generator {
             required: true
         });
 
+        this.option('disableConsole');
+
         this.name = this.options.name;
+        this.console = !this.options.disableConsole;
+
         this.ctrlname = uppercamelcase(this.name) + 'Ctrl';
         this.file = decamelize(this.ctrlname) + '.js';
         this.filetest = decamelize(this.ctrlname) + '_test.js';
@@ -25,7 +29,8 @@ module.exports = class extends Generator {
     }
 
     prompting() {
-        this.log(yosay('Making the controller ' + chalk.blue(this.name)));
+        var text = 'Making the controller ' + chalk.blue(this.name);
+        this.log(this.console ? yosay(text) : text);
     }
 
     writing() {

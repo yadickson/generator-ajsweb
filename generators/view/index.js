@@ -2,7 +2,7 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const camelize = require('camelize')
+const camelize = require('camelize');
 const decamelize = require('decamelize');
 
 module.exports = class extends Generator {
@@ -22,16 +22,20 @@ module.exports = class extends Generator {
 
         this.option('addImage');
         this.option('addHelp');
+        this.option('disableConsole');
 
         this.name = this.options.name;
         this.addImage = this.options.addImage;
         this.addHelp = this.options.addHelp;
-        this.description = this.options.description || 'This is the view ' + this.name + '.';
+        this.console = !this.options.disableConsole;
+        this.description = this.options.description !== undefined ? this.options.description : 'This is the view ' + this.name + '.';
         this.file = decamelize(camelize(this.name)) + '.html';
+        this.includeBootstrap = this.config.get('includeBootstrap');
     }
 
     prompting() {
-        this.log(yosay('Making the view ' + chalk.blue(this.name)));
+        var text = 'Making the view ' + chalk.blue(this.name);
+        this.log(this.console ? yosay(text) : text);
     }
 
     writing() {
@@ -44,7 +48,8 @@ module.exports = class extends Generator {
             this.destinationPath('app/views/' + this.file), {
                 addImage: this.addImage,
                 addHelp: this.addHelp,
-                description: this.description
+                description: this.description,
+                includeBootstrap: this.includeBootstrap
             }
         );
     }

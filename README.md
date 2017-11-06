@@ -103,12 +103,12 @@ gulp clean
 Available generators:
 
 * [angularng](#app) (aka [angularng:app](#app))
+* [angularng:route](#route)
 * [angularng:controller](#controller)
 * [angularng:view](#view)
 
 Unavailable generators:
 
-* [angularng:route](#route)
 * [angularng:directive](#directive)
 * [angularng:filter](#filter)
 * [angularng:service](#service)

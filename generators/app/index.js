@@ -16,6 +16,9 @@ module.exports = class extends Generator {
             required: false
         });
 
+        this.option('disableConsole');
+
+        this.console = !this.options.disableConsole;
         this.appname = this.options.appname || this.appname;
     }
 
@@ -24,7 +27,8 @@ module.exports = class extends Generator {
     }
 
     prompting() {
-        this.log(yosay('Welcome to the ' + chalk.red('Angular-JS') + ' generator!'));
+        var text = 'Welcome to the ' + chalk.red('Angular-JS') + ' generator!';
+        this.log(this.console ? yosay(text) : text);
 
         const prompts = [{
             type: 'input',
@@ -110,20 +114,11 @@ module.exports = class extends Generator {
         this._writingIcon();
         this._writingImages();
         this._writingScripts();
-        this._writingIndex();
+        this._writingViews();
         this._writingStyles();
         this._writingTest();
- 
-        this.composeWith(require.resolve('../controller'), {
-            arguments: ['home']
-        });
-
-        this.composeWith(require.resolve('../view'), {
-            arguments: ['home', 'This is one Gulp Angular JS Application'],
-            addImage: true,
-            addHelp: true
-        });
-   }
+        this._addRoute();
+    }
 
     _writingReadme() {
         this.fs.copyTpl(
@@ -217,9 +212,9 @@ module.exports = class extends Generator {
         );
     }
 
-    _writingIndex() {
+    _writingViews() {
         this.fs.copyTpl(
-            this.templatePath('app/*.html'),
+            this.templatePath('app/**/*.html'),
             this.destinationPath('app/'), {
                 name: this.name,
                 projectModule: this.projectModule,
@@ -256,6 +251,17 @@ module.exports = class extends Generator {
         );
     }
 
+    _addRoute() {
+
+        this.composeWith(require.resolve('../route'), {
+            arguments: ['home', 'This is one Gulp Angular JS Application'],
+            addImage: true,
+            addHelp: true,
+            disableConsole: true
+        });
+
+    }
+
     install() {
         const hasYarn = commandExists('yarn');
         this.installDependencies({
@@ -264,11 +270,8 @@ module.exports = class extends Generator {
             yarn: hasYarn
         });
 
-        this.log(
-            yosay(
-                'Run ' + chalk.red('gulp serve') + ' to start web application'
-            )
-        );
+        var text = 'Run ' + chalk.red('gulp serve') + ' to start web application';
+        this.log(this.console ? yosay(text) : text);
 
     }
 };
