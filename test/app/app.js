@@ -4,14 +4,13 @@ var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-angularng:app', () => {
-    describe('Only Sass', () => {
+    describe('on', () => {
         before(done => {
-            helpers.run(path.join(__dirname, '../app'))
-                .withPrompts({
-                    features: [
-                        'includeSass'
-                    ]
+            helpers.run(path.join(__dirname, '../../generators/app'))
+                .withOptions({
+                    'appname': 'app'
                 })
+                .withPrompts({})
                 .on('end', done);
         });
 

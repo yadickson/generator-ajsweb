@@ -6,12 +6,10 @@ var helpers = require('yeoman-test');
 describe('generator-angularng:app', () => {
     describe('All features', () => {
         before(done => {
-            helpers.run(path.join(__dirname, '../app'))
+            helpers.run(path.join(__dirname, '../../generators/app'))
                 .withPrompts({
-                    features: [
-                        'includeSass',
-                        'includeBootstrap'
-                    ]
+                    includeBootstrap: true,
+                    includeSass: true
                 })
                 .on('end', done);
         });

@@ -168,6 +168,15 @@ function buildScripts() {
         .pipe(gulp.dest(dest + '/js'));
 }
 
+function buildViews() {
+    return gulp.src(paths.appViews)
+        .pipe(inject(series(buildVendorScripts(), buildScripts(), buildVendorStyles(), buildStyles()), {
+            ignorePath: dest,
+            addRootSlash: false
+        }))
+        .pipe(gulp.dest(dest));
+}
+
 function buildTestScripts() {
     return appTests()
         .pipe(gulp.dest(dest + '/test'));
@@ -203,7 +212,7 @@ gulp.task('serve', ['default'], () => {
 
     gulp.watch(paths.appScripts, ['scripts']);
     gulp.watch(paths.appStyles, ['styles']);
-    gulp.watch(paths.appViews, ['html']);
+    gulp.watch(paths.appViews, ['views']);
     gulp.watch(paths.appImages, ['images']);
     gulp.watch(paths.appFonts, ['fonts']);
     gulp.watch(paths.appIcon, ['icons']);
@@ -279,12 +288,15 @@ gulp.task('icon', () => {
 
 gulp.task('html', () => {
 
-    return gulp.src(paths.appViews)
-        .pipe(inject(series(buildVendorScripts(), buildScripts(), buildVendorStyles(), buildStyles()), {
-            ignorePath: dest,
-            addRootSlash: false
-        }))
-        .pipe(gulp.dest(dest));
+    return buildViews();
+});
+
+gulp.task('views', () => {
+
+    return buildViews()
+        .pipe(reload({
+            stream: true
+        }));
 });
 
 gulp.task('testHtml', ['build'], () => {

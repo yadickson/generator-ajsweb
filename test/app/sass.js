@@ -4,18 +4,18 @@ var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-angularng:app', () => {
-    describe('Create template files', () => {
+    describe('Only Sass', () => {
         before(done => {
-            helpers.run(path.join(__dirname, '../app'))
-                .withPrompts({})
+            helpers.run(path.join(__dirname, '../../generators/app'))
+                .withPrompts({
+                    includeBootstrap: true,
+                    includeSass: true
+                })
                 .on('end', done);
         });
 
-        it('creates gulpfile.js', () => {
+        it('creates files', () => {
             assert.file(['gulpfile.js']);
-        });
-
-        it('creates package.json', () => {
             assert.file(['package.json']);
         });
     });

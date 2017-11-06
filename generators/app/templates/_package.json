@@ -2,8 +2,8 @@
   "name": "<%= name %>",
   "version": "<%= version %>",
   "description": "<%= description %>",
-  "main": "<%= main %>",
-  "author": "<%= author %>",
+  "main": "",
+  "author": "<%= author %> <<%= email %>>",
   "license": "<%= license %>",
   "dependencies": {
     "angular": "~1.6.1",

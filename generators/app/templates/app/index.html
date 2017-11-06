@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-ng-app="<%= projectModule %>">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= name %></title>
+
+  <link rel="icon" href="favicon.ico">
+
+  <!-- inject:css -->
+  <!-- endinject -->
+
+</head>
+
+<body>
+
+  <div <% if (includeBootstrap) { %>class="container-fluid"<% } %>>
+    <div <% if (includeBootstrap) { %>class="header" <% } %>ui-view="header"></div>
+    <div <% if (includeBootstrap) { %>class="main" <% } %>ui-view="main"></div>
+    <div <% if (includeBootstrap) { %>class="footer" <% } %>ui-view="footer"></div>
+  </div>
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+</body>
+
+</html>
