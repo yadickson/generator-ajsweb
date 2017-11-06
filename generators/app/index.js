@@ -117,7 +117,6 @@ module.exports = class extends Generator {
         this._writingViews();
         this._writingStyles();
         this._writingTest();
-        this._addRoute();
     }
 
     _writingReadme() {
@@ -264,11 +263,14 @@ module.exports = class extends Generator {
 
     install() {
         const hasYarn = commandExists('yarn');
+
         this.installDependencies({
             npm: !hasYarn,
             bower: false,
             yarn: hasYarn
         });
+
+        this._addRoute();
 
         var text = 'Run ' + chalk.red('gulp serve') + ' to start web application';
         this.log(this.console ? yosay(text) : text);
