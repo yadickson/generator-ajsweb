@@ -12,7 +12,6 @@ const reload = browserSync.reload;
 const rename = require('gulp-rename');
 const fs = require('file-system');
 const order = require('gulp-order');
-const print = require('gulp-print');
 const mainNpmFiles = require('gulp-main-npm-files');
 const styleNpmFiles = require('gulp-style-npm-files');
 const fontNpmFiles = require('gulp-font-npm-files');
@@ -110,7 +109,20 @@ function vendorTestScripts() {
 }
 
 function appTests() {
-    return gulp.src(paths.appTests);
+    return gulp.src(paths.appTests)
+        .pipe(order([
+            '**/main_test.js',
+            '**/*_const_test.js',
+            '**/*_value_test.js',
+            '**/*_service_test.js',
+            '**/*_factory_test.js',
+            '**/*_provider_test.js',
+            '**/*_directive_test.js',
+            '**/*_filter_test.js',
+            '**/*_decorator_test.js',
+            '**/*_ctrl_test.js',
+            '*'
+        ]));
 }
 
 function appStyles() {
