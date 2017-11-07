@@ -3,12 +3,12 @@
 
     /**
      * @ngdoc Value
-     * @name <%= projectModule %>.value:<%= name %>
+     * @name <%= projectModule %>.value:<%= varname %>
      * @description
-     * # <%= name %>
+     * # <%= varname %>
      * Value of the <%= projectModule %>
      */
     angular.module('<%= projectModule %>')
-        .value('<%= name %>', '<%= name %>');
+        .value('<%= varname %>', '<%= name %>');
 
 })();

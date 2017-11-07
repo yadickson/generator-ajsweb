@@ -23,7 +23,8 @@ module.exports = class extends Generator {
         this.name = this.options.name || 'none';
         this.console = !this.options.disableConsole;
 
-        this.valuename = camelize(this.name) + 'Val';
+        this.varname = camelize(this.name);
+        this.valuename = this.varname + 'Value';
         this.file = decamelize(this.valuename) + '.js';
         this.filetest = decamelize(this.valuename) + '_test.js';
 
@@ -45,6 +46,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('value.js'),
             this.destinationPath('app/scripts/services/' + this.file), {
+                varname: this.varname,
                 name: this.valuename,
                 projectModule: this.projectModule,
                 license: this.license
@@ -56,6 +58,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('value_test.js'),
             this.destinationPath('test/spec/services/' + this.filetest), {
+                varname: this.varname,
                 name: this.valuename,
                 projectModule: this.projectModule,
                 license: this.license
