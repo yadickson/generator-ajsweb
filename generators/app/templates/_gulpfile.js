@@ -38,9 +38,9 @@ const paths = {
     appViews: 'app/**/*.html',
     appIcon: 'app/*.ico',
     appImages: 'app/images/**/*',
-    appFonts: ['app/fonts/**/*', '!README'],
+    appFonts: ['app/fonts/**/*.{eot,svg,ttf,woff,woff2}', '!README'],
     appTests: ['test/**/*.js'],
-    testHtml: 'test/*.html'
+    testHtml: 'test/test.html'
 }
 
 function vendorScripts() {
@@ -234,7 +234,8 @@ gulp.task('serve:test', ['testHtml'], () => {
         port: 9000,
         ui: false,
         server: {
-            baseDir: dest
+            baseDir: dest,
+            index: "test.html"
         }
     });
 
