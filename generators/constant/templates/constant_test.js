@@ -4,11 +4,11 @@
     describe('Constant:<%= name %>', function() {
         describe('Test module and constant', function() {
 
-            // load the controller's module
+            // load the module
             beforeEach(angular.mock.module('<%= projectModule %>'));
 
             var <%= varname %>;
-            // Initialize the controller and a mock scope
+            // Initialize the service
             beforeEach(inject(function(_<%= name %>_) {
                 <%= varname %> = _<%= name %>_;
             }));
