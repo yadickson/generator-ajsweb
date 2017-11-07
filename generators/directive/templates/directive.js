@@ -3,9 +3,9 @@
 
     /**
      * @ngdoc Directive
-     * @name <%= projectModule %>.directive:<%= name %>
+     * @name <%= projectModule %>.directive:<%= varname %>
      * @description
-     * # <%= name %>
+     * # <%= varname %>
      * Directive of the <%= projectModule %>
      */
     angular.module('<%= projectModule %>')

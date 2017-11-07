@@ -1,7 +1,7 @@
   (function() {
       'use strict';
 
-      describe('Directive:<%= name %>', function() {
+      describe('Directive:<%= varname %>', function() {
           describe('Test module and direcitive', function() {
 
               // load the module
