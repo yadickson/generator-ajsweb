@@ -7,10 +7,8 @@ describe('generator-angularng:app', () => {
     describe('Only bootstrap', () => {
         before(done => {
             helpers.run(path.join(__dirname, '../../generators/app'))
-                .withPrompts({
-                    includeBootstrap: true,
-                    includeSass: false
-                })
+                .withOptions({sass: false, disableBootstrap: false})
+                .withPrompts({})
                 .on('end', done);
         });
 

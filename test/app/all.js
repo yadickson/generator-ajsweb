@@ -7,10 +7,8 @@ describe('generator-angularng:app', () => {
     describe('All features', () => {
         before(done => {
             helpers.run(path.join(__dirname, '../../generators/app'))
-                .withPrompts({
-                    includeBootstrap: true,
-                    includeSass: true
-                })
+                .withOptions({sass: true, disableBootstrap: false})
+                .withPrompts({})
                 .on('end', done);
         });
 

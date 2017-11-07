@@ -15,19 +15,29 @@ module.exports = class extends Generator {
 
         this.argument('name', {
             type: String,
-            required: true
+            required: true,
+            desc: '[Route name]'
         });
 
         this.argument('description', {
             type: String,
-            required: false
+            required: false,
+            desc: '[Description]'
         });
 
-        this.option('addImage');
-        this.option('addHelp');
-        this.option('disableConsole');
+        this.option('addImage', {
+            desc: 'Add image to view (default: false)'
+        });
 
-        this.name = this.options.name;
+        this.option('addHelp', {
+            desc: 'Add link to help page (default: false)'
+        });
+
+        this.option('disableConsole', {
+            desc: 'Disable yosay console (default: false)'
+        });
+
+        this.name = this.options.name || 'none';
         this.addImage = this.options.addImage;
         this.addHelp = this.options.addHelp;
         this.console = !this.options.disableConsole;

@@ -17,6 +17,20 @@ npm install -g yo
 npm install -g generator-ajsweb
 ```
 
+## List generators
+
+```bash
+yo --generators
+```
+
+## Make project
+
+Help
+
+```bash
+yo ajsweb --help
+```
+
 Then generate your new project:
 
 ```bash
@@ -125,6 +139,7 @@ Sets up a new AngularJS app, generating all the boilerplate you need to get star
 
 Example:
 ```bash
+yo ajsweb --help
 yo ajsweb
 ```
 
@@ -133,6 +148,7 @@ Generates a controller and view, and configures a route in `app/scripts/main_cfg
 
 Example:
 ```bash
+yo ajsweb:route --help
 yo ajsweb:route route-name
 ```
 
@@ -141,6 +157,7 @@ Generates a controller in `app/scripts/controllers`.
 
 Example:
 ```bash
+yo ajsweb:controller --help
 yo ajsweb:controller controller-name
 ```
 
@@ -149,6 +166,7 @@ Generates an HTML view file in `app/views`.
 
 Example:
 ```bash
+yo ajsweb:view --help
 yo ajsweb:view view-name
 ```
 
@@ -157,6 +175,7 @@ Generates a directive in `app/scripts/directives`.
 
 Example:
 ```bash
+yo ajsweb:directive --help
 yo ajsweb:directive directive-name
 ```
 
@@ -165,6 +184,7 @@ Generates a filter in `app/scripts/filters`.
 
 Example:
 ```bash
+yo ajsweb:filter --help
 yo ajsweb:filter filter-name
 ```
 
@@ -173,6 +193,7 @@ Generates an AngularJS service in `app/scripts/services`.
 
 Example:
 ```bash
+yo ajsweb:service --help
 yo ajsweb:service service-name
 ```
 
@@ -181,6 +202,7 @@ Generates an AngularJS provider in `app/scripts/services`.
 
 Example:
 ```bash
+yo ajsweb:provider --help
 yo ajsweb:provider provider-name
 ```
 
@@ -189,6 +211,7 @@ Generates an AngularJS factory in `app/scripts/services`.
 
 Example:
 ```bash
+yo ajsweb:factory --help
 yo ajsweb:factory factory-name
 ```
 
@@ -197,6 +220,7 @@ Generates an AngularJS value in `app/scripts/services`.
 
 Example:
 ```bash
+yo ajsweb:value --help
 yo ajsweb:value value-name
 ```
 
@@ -205,6 +229,7 @@ Generates an AngularJS constant in `app/scripts/services`.
 
 Example:
 ```bash
+yo ajsweb:constant --help
 yo ajsweb:constant constant-name
 ```
 
@@ -213,6 +238,7 @@ Generates an AngularJS service decorator in `app/scripts/decorators`.
 
 Example:
 ```bash
+yo ajsweb:decorator --help
 yo ajsweb:decorator service-name
 ```
 
@@ -221,6 +247,7 @@ Generates an AngularJS component in `app/scripts/components`.
 
 Example:
 ```bash
+yo ajsweb:component --help
 yo ajsweb:component component-name
 ```
 

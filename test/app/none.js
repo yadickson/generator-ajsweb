@@ -7,9 +7,8 @@ describe('generator-angularng:app', () => {
     describe('Without external lib', () => {
         before(done => {
             helpers.run(path.join(__dirname, '../../generators/app'))
-                .withPrompts({
-                    includeBootstrap: false
-                })
+                .withOptions({sass: false, disableBootstrap: true})
+                .withPrompts({})
                 .on('end', done);
         });
 

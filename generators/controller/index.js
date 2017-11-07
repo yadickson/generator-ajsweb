@@ -12,12 +12,15 @@ module.exports = class extends Generator {
 
         this.argument('name', {
             type: String,
-            required: true
+            required: true,
+            desc: '[Controller name]'
         });
 
-        this.option('disableConsole');
+        this.option('disableConsole', {
+            desc: 'Disable yosay console (default: false)'
+        });
 
-        this.name = this.options.name;
+        this.name = this.options.name || 'none';
         this.console = !this.options.disableConsole;
 
         this.ctrlname = uppercamelcase(this.name) + 'Ctrl';

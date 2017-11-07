@@ -13,12 +13,26 @@ module.exports = class extends Generator {
 
         this.argument('appname', {
             type: String,
-            required: false
+            required: false,
+            desc: '[Project application name]'
         });
 
-        this.option('disableConsole');
+        this.option('disableBootstrap', {
+            desc: 'Disable bootstrap (default: false)'
+        });
 
+        this.option('disableConsole', {
+            desc: 'Disable yosay console (default: false)'
+        });
+
+        this.option('sass', {
+            desc: 'Enable sass (default: false)'
+        });
+
+        this.includeSass = this.options.sass;
+        this.includeBootstrap = this.options.sass || !this.options.disableBootstrap;
         this.console = !this.options.disableConsole;
+
         this.appname = this.options.appname || this.appname;
     }
 
@@ -35,11 +49,6 @@ module.exports = class extends Generator {
             name: 'name',
             message: 'Your project name',
             default: this.appname
-        }, {
-            type: 'input',
-            name: 'version',
-            message: 'Version',
-            default: '0.0.0'
         }, {
             type: 'input',
             name: 'description',
@@ -65,34 +74,22 @@ module.exports = class extends Generator {
             name: 'username',
             message: 'What\'s your GitHub username',
             default: ''
-        }, {
-            type: 'confirm',
-            name: 'includeBootstrap',
-            message: 'Would you like to include Bootstrap?'
-        }, {
-            when: answers => answers.includeBootstrap === true,
-            type: 'confirm',
-            name: 'includeSass',
-            message: 'Would you like to include Sass?'
         }];
 
         return this.prompt(prompts).then(props => {
 
             this.name = props.name;
-            this.version = props.version;
             this.description = props.description;
             this.author = props.author;
             this.email = props.email;
             this.license = props.license;
             this.username = props.username;
-            this.includeBootstrap = props.includeBootstrap;
-            this.includeSass = props.includeSass || false;
 
             this.projectModule = camelize(this.name) + "Module";
 
             this.config.set('name', this.name);
             this.config.set('projectModule', this.projectModule);
-            this.config.set('version', this.version);
+            this.config.set('version', '0.0.0');
             this.config.set('description', this.description);
             this.config.set('author', this.author);
             this.config.set('email', this.email);
