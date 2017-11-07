@@ -122,14 +122,14 @@ Available generators:
 * [ajsweb:view](#view)
 * [ajsweb:value](#value)
 * [ajsweb:constant](#constant)
+* [ajsweb:service](#service)
+* [ajsweb:provider](#provider)
+* [ajsweb:factory](#factory)
 
 Unavailable generators:
 
 * [ajsweb:directive](#directive)
 * [ajsweb:filter](#filter)
-* [ajsweb:service](#service)
-* [ajsweb:provider](#provider)
-* [ajsweb:factory](#factory)
 * [ajsweb:decorator](#decorator)
 * [ajsweb:component](#component)
 
@@ -140,7 +140,7 @@ Sets up a new AngularJS app, generating all the boilerplate you need to get star
 Example:
 ```bash
 yo ajsweb --help
-yo ajsweb
+yo ajsweb project
 ```
 
 ### Route
