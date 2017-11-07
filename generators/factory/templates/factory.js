@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc Factory
-     * @name <%= projectModule %>.factory:<%= name %>
+     * @name <%= projectModule %>.factory:<%= varname %>
      * @description
-     * # <%= name %>
+     * # <%= varname %>
      * Factory of the <%= projectModule %>
      */
     angular.module('<%= projectModule %>')
-        .factory('<%= name %>', function() {
+        .factory('<%= varname %>', function() {
             // Service logic
             // ...
 
