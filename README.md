@@ -127,10 +127,10 @@ Available generators:
 * [ajsweb:factory](#factory)
 * [ajsweb:value](#value)
 * [ajsweb:constant](#constant)
+* [ajsweb:decorator](#decorator)
 
 Unavailable generators:
 
-* [ajsweb:decorator](#decorator)
 * [ajsweb:component](#component)
 
 
