@@ -1,7 +1,7 @@
 {
-    "name": "generator-angularng",
+    "name": "generator-ajsweb",
     "version": "1.0.0",
-    "description": "Yeoman Gulp generator for AngularJS ",
+    "description": "Yeoman Gulp generator for AngularJS Web Application",
     "homepage": "https://github.com/yadickson/generator-angularng",
     "author": {
         "name": "Yadickson Soto",
@@ -44,6 +44,6 @@
         "test": "./node_modules/.bin/nyc --reporter=html mocha --recursive",
         "coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls"
     },
-    "repository": "https://github.com/yadickson/generator-angularng.git",
+    "repository": "https://github.com/yadickson/generator-ajsweb.git",
     "license": "GPL-3.0"
 }
