@@ -4,7 +4,7 @@
     describe('Controller:<%= name %>', function() {
         describe('Test module and controller', function() {
 
-            // load the controller's module
+            // load the module
             beforeEach(angular.mock.module('<%= projectModule %>'));
 
             var <%= name %>,
