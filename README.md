@@ -120,6 +120,8 @@ Available generators:
 * [ajsweb:route](#route)
 * [ajsweb:controller](#controller)
 * [ajsweb:view](#view)
+* [ajsweb:value](#value)
+* [ajsweb:constant](#constant)
 
 Unavailable generators:
 
@@ -128,8 +130,6 @@ Unavailable generators:
 * [ajsweb:service](#service)
 * [ajsweb:provider](#provider)
 * [ajsweb:factory](#factory)
-* [ajsweb:value](#value)
-* [ajsweb:constant](#constant)
 * [ajsweb:decorator](#decorator)
 * [ajsweb:component](#component)
 
