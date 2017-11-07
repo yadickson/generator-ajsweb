@@ -3,13 +3,13 @@
 
     /**
      * @ngdoc Service
-     * @name <%= projectModule %>.service:<%= name %>
+     * @name <%= projectModule %>.service:<%= varname %>
      * @description
-     * # <%= name %>
+     * # <%= varname %>
      * Service of the <%= projectModule %>
      */
     angular.module('<%= projectModule %>')
-        .service('<%= name %>', function() {
+        .service('<%= varname %>', function() {
             // AngularJS will instantiate a singleton by calling "new" on this function
             this.name = '<%= name %>';
         });

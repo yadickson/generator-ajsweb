@@ -1,7 +1,7 @@
   (function() {
       'use strict';
 
-      describe('Service:<%= name %>', function() {
+      describe('Service:<%= varname %>', function() {
           describe('Test module and service', function() {
 
               // load the module
@@ -9,8 +9,8 @@
 
               var <%= name %>;
               // Initialize the service
-              beforeEach(inject(function(_<%= name %>_) {
-                  <%= name %> = _<%= name %>_;
+              beforeEach(inject(function(_<%= varname %>_) {
+                  <%= name %> = _<%= varname %>_;
               }));
 
               it('Check service <%= name %>', function() {
