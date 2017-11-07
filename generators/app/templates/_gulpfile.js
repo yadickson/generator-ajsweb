@@ -23,8 +23,8 @@ const series = require('stream-series');
 const es = require('event-stream');
 const inject = require('gulp-inject');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');<% if (includeSass) { %>
+const sass = require('gulp-sass');<% } %>
 const karma = require('karma').Server;
 const jshint = require("gulp-jshint");
 
@@ -34,11 +34,11 @@ let dest = 'dist';
 
 const paths = {
     appScripts: ['app/scripts/**/*.js'],
-    appStyles: ['app/styles/*.scss'],
+    appStyles: ['app/styles/*.*css', '!README'],
     appViews: 'app/**/*.html',
     appIcon: 'app/*.ico',
     appImages: 'app/images/**/*',
-    appFonts: 'app/fonts/**/*',
+    appFonts: ['app/fonts/**/*', '!README'],
     appTests: ['test/**/*.js'],
     testHtml: 'test/*.html'
 }
@@ -46,14 +46,14 @@ const paths = {
 function vendorScripts() {
     return gulp.src(mainNpmFiles()
             .concat('!node_modules/**/index.js')
-            .concat('node_modules/angular/angular.js')
-            .concat('node_modules/bootstrap/**/bootstrap.js')
+            .concat('node_modules/angular/angular.js')<% if (includeBootstrap) { %>
+            .concat('node_modules/bootstrap/**/bootstrap.js')<% } %>
         )
         .pipe(order([
             'jquery.js',
             'angular.js',
-            'angular-ui-router.js',
-            'bootstrap.js',
+            'angular-ui-router.js',<% if (includeBootstrap) { %>
+            'bootstrap.js',<% } %>
             '*'
         ]));
 }
@@ -93,16 +93,16 @@ function mochaTestStyles() {
 function vendorTestScripts() {
     return gulp.src(mainNpmFiles()
             .concat('!node_modules/**/index.js')
-            .concat('node_modules/angular/angular.js')
-            .concat('node_modules/bootstrap/**/bootstrap.js')
+            .concat('node_modules/angular/angular.js')<% if (includeBootstrap) { %>
+            .concat('node_modules/bootstrap/**/bootstrap.js')<% } %>
             .concat('node_modules/angular-mocks/angular-mocks.js')
         )
         .pipe(order([
             'jquery.js',
             'angular.js',
             'angular-ui-router.js',
-            'angular-mocks.js',
-            'bootstrap.js',
+            'angular-mocks.js',<% if (includeBootstrap) { %>
+            'bootstrap.js',<% } %>
             '*'
         ]));
 }
@@ -151,8 +151,8 @@ function buildMochaTestStyle() {
 }
 
 function buildVendorStyles() {
-    return vendorStyles()
-        .pipe(sass().on('error', sass.logError))
+    return vendorStyles()<% if (includeSass) { %>
+        .pipe(sass().on('error', sass.logError))<% } %>
         .pipe($.if(minimal, cleanCSS()))
         .pipe($.if(minimal, concat('vendor.css')))
         .pipe(gulp.dest(dest + '/css'));
@@ -188,8 +188,8 @@ function buildVendorTestScripts() {
 }
 
 function buildStyles() {
-    return appStyles()
-        .pipe(sass().on('error', sass.logError))
+    return appStyles()<% if (includeSass) { %>
+        .pipe(sass().on('error', sass.logError))<% } %>
         .pipe($.if(minimal, cleanCSS()))
         .pipe($.if(minimal, concat('app.css')))
         .pipe(gulp.dest(dest + '/css'));

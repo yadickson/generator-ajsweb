@@ -113,6 +113,7 @@ module.exports = class extends Generator {
         this._writingScripts();
         this._writingViews();
         this._writingStyles();
+        this._writingFonts();
         this._writingTest();
     }
 
@@ -229,6 +230,13 @@ module.exports = class extends Generator {
         this.fs.copy(
             this.templatePath('app/styles/*'),
             this.destinationPath('app/styles/')
+        );
+    }
+
+    _writingFonts() {
+        this.fs.copy(
+            this.templatePath('app/fonts/*'),
+            this.destinationPath('app/fonts/')
         );
     }
 
