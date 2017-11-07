@@ -1,6 +1,6 @@
 {
     "name": "generator-ajsweb",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Yeoman Gulp generator for AngularJS Web Application",
     "homepage": "https://github.com/yadickson/generator-angularng",
     "author": {
@@ -20,7 +20,8 @@
         "generators/factory",
         "generators/value",
         "generators/constant",
-        "generators/decorator"
+        "generators/decorator",
+        "generators/component"
     ],
     "main": "generators/app/index.js",
     "keywords": [
