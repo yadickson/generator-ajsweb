@@ -50,21 +50,10 @@ module.exports = class extends Generator {
     prompting() {
         var text = 'Making the route ' + chalk.blue(this.name);
         this.log(this.console ? yosay(text) : text);
-        this._addRoute();
     }
 
     writing() {
-        this.composeWith(require.resolve('../controller'), {
-            arguments: [this.name],
-            disableConsole: !this.console
-        });
-
-        this.composeWith(require.resolve('../view'), {
-            arguments: [this.name, this.description],
-            addImage: this.addImage,
-            addHelp: this.addHelp,
-            disableConsole: !this.console
-        });
+        this._addRoute();
     }
 
     _addRoute() {
@@ -125,4 +114,19 @@ module.exports = class extends Generator {
         }
 
     }
+
+    install() {
+        this.composeWith(require.resolve('../controller'), {
+            arguments: [this.name],
+            disableConsole: !this.console
+        });
+
+        this.composeWith(require.resolve('../view'), {
+            arguments: [this.name, this.description],
+            addImage: this.addImage,
+            addHelp: this.addHelp,
+            disableConsole: !this.console
+        });
+    }
+
 };

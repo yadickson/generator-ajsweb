@@ -39,11 +39,11 @@ module.exports = class extends Generator {
     }
 
     writing() {
-        this._writingValue();
+        this._writingDirective();
         this._writingTest();
     }
 
-    _writingValue() {
+    _writingDirective() {
         this.fs.copyTpl(
             this.templatePath('directive.js'),
             this.destinationPath('app/scripts/directives/' + this.file), {

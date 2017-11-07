@@ -38,11 +38,11 @@ module.exports = class extends Generator {
     }
 
     writing() {
-        this._writingValue();
+        this._writingFactory();
         this._writingTest();
     }
 
-    _writingValue() {
+    _writingFactory() {
         this.fs.copyTpl(
             this.templatePath('factory.js'),
             this.destinationPath('app/scripts/services/' + this.file), {

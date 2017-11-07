@@ -41,11 +41,11 @@ module.exports = class extends Generator {
     }
 
     writing() {
-        this._writingValue();
+        this._writingConstant();
         this._writingTest();
     }
 
-    _writingValue() {
+    _writingConstant() {
         this.fs.copyTpl(
             this.templatePath('constant.js'),
             this.destinationPath('app/scripts/services/' + this.file), {

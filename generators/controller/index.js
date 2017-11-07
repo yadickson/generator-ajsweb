@@ -37,11 +37,11 @@ module.exports = class extends Generator {
     }
 
     writing() {
-        this._writingScript();
+        this._writingController();
         this._writingTest();
     }
 
-    _writingScript() {
+    _writingController() {
         this.fs.copyTpl(
             this.templatePath('controller.js'),
             this.destinationPath('app/scripts/controllers/' + this.file), {

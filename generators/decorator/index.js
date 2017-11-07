@@ -34,11 +34,11 @@ module.exports = class extends Generator {
     }
 
     writing() {
-        this._writingValue();
+        this._writingDecorator();
         this._writingTest();
     }
 
-    _writingValue() {
+    _writingDecorator() {
         this.fs.copyTpl(
             this.templatePath('decorator.js'),
             this.destinationPath('app/scripts/decorators/' + this.file), {
