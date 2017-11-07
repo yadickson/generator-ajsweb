@@ -17,6 +17,8 @@ const mainNpmFiles = require('gulp-main-npm-files');
 const styleNpmFiles = require('gulp-style-npm-files');
 const fontNpmFiles = require('gulp-font-npm-files');
 const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const stripCssComments = require('gulp-strip-css-comments');
 const babel = require('gulp-babel');
 const angularFilesort = require('gulp-angular-filesort');
 const series = require('stream-series');
@@ -153,7 +155,10 @@ function buildMochaTestStyle() {
 function buildVendorStyles() {
     return vendorStyles()<% if (includeSass) { %>
         .pipe(sass().on('error', sass.logError))<% } %>
+        .pipe(stripCssComments())
+        .pipe($.if(minimal, sourcemaps.init()))
         .pipe($.if(minimal, cleanCSS()))
+        .pipe($.if(minimal, sourcemaps.write()))
         .pipe($.if(minimal, concat('vendor.css')))
         .pipe(gulp.dest(dest + '/css'));
 }
@@ -190,7 +195,9 @@ function buildVendorTestScripts() {
 function buildStyles() {
     return appStyles()<% if (includeSass) { %>
         .pipe(sass().on('error', sass.logError))<% } %>
+        .pipe($.if(minimal, sourcemaps.init()))
         .pipe($.if(minimal, cleanCSS()))
+        .pipe($.if(minimal, sourcemaps.write()))
         .pipe($.if(minimal, concat('app.css')))
         .pipe(gulp.dest(dest + '/css'));
 }

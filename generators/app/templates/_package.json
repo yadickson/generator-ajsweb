@@ -51,6 +51,7 @@
     "gulp-sass": "^3.0.0",<% } %>
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^2.6.1",
+    "gulp-strip-css-comments": "^1.2.0",
     "gulp-style-npm-files": "^1.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.0.0",
