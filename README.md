@@ -121,6 +121,7 @@ Available generators:
 * [ajsweb:controller](#controller)
 * [ajsweb:view](#view)
 * [ajsweb:directive](#directive)
+* [ajsweb:filter](#filter)
 * [ajsweb:service](#service)
 * [ajsweb:provider](#provider)
 * [ajsweb:factory](#factory)
@@ -129,7 +130,6 @@ Available generators:
 
 Unavailable generators:
 
-* [ajsweb:filter](#filter)
 * [ajsweb:decorator](#decorator)
 * [ajsweb:component](#component)
 
