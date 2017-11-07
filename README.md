@@ -120,15 +120,15 @@ Available generators:
 * [ajsweb:route](#route)
 * [ajsweb:controller](#controller)
 * [ajsweb:view](#view)
-* [ajsweb:value](#value)
-* [ajsweb:constant](#constant)
+* [ajsweb:directive](#directive)
 * [ajsweb:service](#service)
 * [ajsweb:provider](#provider)
 * [ajsweb:factory](#factory)
+* [ajsweb:value](#value)
+* [ajsweb:constant](#constant)
 
 Unavailable generators:
 
-* [ajsweb:directive](#directive)
 * [ajsweb:filter](#filter)
 * [ajsweb:decorator](#decorator)
 * [ajsweb:component](#component)
