@@ -1,20 +1,20 @@
 (function() {
     'use strict';
 
-    describe('Constant:<%= name %>', function() {
+    describe('Constant:<%= varname %>', function() {
         describe('Test module and constant', function() {
 
             // load the module
             beforeEach(angular.mock.module('<%= projectModule %>'));
 
-            var <%= varname %>;
+            var <%= name %>;
             // Initialize the service
-            beforeEach(inject(function(_<%= name %>_) {
-                <%= varname %> = _<%= name %>_;
+            beforeEach(inject(function(_<%= varname %>_) {
+                <%= name %> = _<%= varname %>_;
             }));
 
             it('Check value', function() {
-                expect(<%= varname %>).to.be.equal('<%= name %>');
+                expect(<%= name %>).to.be.equal('<%= name %>');
             });
         });
     });

@@ -3,12 +3,12 @@
 
     /**
      * @ngdoc Constant
-     * @name <%= projectModule %>.constant:<%= name %>
+     * @name <%= projectModule %>.constant:<%= varname %>
      * @description
-     * # <%= name %>
+     * # <%= varname %>
      * Constant of the <%= projectModule %>
      */
     angular.module('<%= projectModule %>')
-        .constant('<%= name %>', '<%= name %>');
+        .constant('<%= varname %>', '<%= name %>');
 
 })();

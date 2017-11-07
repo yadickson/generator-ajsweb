@@ -24,7 +24,8 @@ module.exports = class extends Generator {
         this.name = this.options.name || 'none';
         this.console = !this.options.disableConsole;
 
-        this.const = camelize(this.name) + "Const";
+        this.varname = camelize(this.name);
+        this.const = this.varname + "Const";
         this.constname = upperCase(decamelize(camelize(this.const)));
 
         this.file = decamelize(camelize(this.const)) + '.js';
@@ -48,6 +49,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('constant.js'),
             this.destinationPath('app/scripts/services/' + this.file), {
+                varname: this.varname,
                 name: this.constname,
                 projectModule: this.projectModule,
                 license: this.license
@@ -59,7 +61,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('constant_test.js'),
             this.destinationPath('test/spec/services/' + this.filetest), {
-                varname: this.const,
+                varname: this.varname,
                 name: this.constname,
                 projectModule: this.projectModule,
                 license: this.license
