@@ -13,11 +13,11 @@
                   <%= name %> = _<%= varname %>_;
               }));
 
-              it('Check factory <%= name %>', function() {
+              it('Check factory <%= varname %>', function() {
                   expect(!!<%= name %>).to.be.true;
               });
 
-              it('Check <%= name %>.someMethod()', function() {
+              it('Check <%= varname %>.someMethod()', function() {
                   expect(<%= name %>.someMethod()).to.be.equal('<%= name %>');
               });
           });

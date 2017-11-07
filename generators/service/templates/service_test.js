@@ -13,11 +13,11 @@
                   <%= name %> = _<%= varname %>_;
               }));
 
-              it('Check service <%= name %>', function() {
+              it('Check service <%= varname %>', function() {
                   expect(!!<%= name %>).to.be.true;
               });
 
-              it('Check <%= name %>.name', function() {
+              it('Check <%= varname %>.name', function() {
                   expect(<%= name %>.name).to.be.equal('<%= name %>');
               });
           });
