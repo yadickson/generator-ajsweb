@@ -2,7 +2,7 @@
     'use strict';
 
     /**
-     * @ngdoc Value
+     * @ngdoc Constant
      * @name <%= projectModule %>.constant:<%= name %>
      * @description
      * # <%= name %>
