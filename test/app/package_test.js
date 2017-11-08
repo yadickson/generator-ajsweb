@@ -7,9 +7,7 @@ describe('generator-ajsweb:app', () => {
     describe('Check package.json info', () => {
         before(done => {
             helpers.run(path.join(__dirname, '../../generators/app'))
-                .withOptions({
-                    'appname': 'app'
-                })
+                .withArguments(['app'])
                 .withPrompts({
                     description: 'app description',
                     author: 'app author',
@@ -36,7 +34,8 @@ describe('generator-ajsweb:app', () => {
             helpers.run(path.join(__dirname, '../../generators/app'))
                 .withOptions({
                     disableSass: true,
-                    disableBootstrap: true
+                    disableBootstrap: true,
+                    disableConsole: true
                 })
                 .withPrompts({})
                 .on('end', done);

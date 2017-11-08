@@ -11,6 +11,8 @@ const ajsweb = require("gulp-ajsweb");
 let dev = true;
 let minimal = false;
 let dest = 'dist';
+let bootstrap = <%= includeBootstrap %>;
+let sass = <%= includeSass %>;
 
 gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip']);
@@ -50,8 +52,8 @@ gulp.task('styles', () => {
     return ajsweb.buildStyles({
             dest: dest,
             minimal: minimal,
-            bootstrap: <%= includeBootstrap %>,
-            sass: <%= includeSass %>
+            bootstrap: bootstrap,
+            sass: sass
         })
         .pipe(reload({
             stream: true
@@ -72,8 +74,8 @@ gulp.task('views', () => {
     return ajsweb.buildViews({
             dest: dest,
             minimal: minimal,
-            bootstrap: <%= includeBootstrap %>,
-            sass: <%= includeSass %>
+            bootstrap: bootstrap,
+            sass: sass
         })
         .pipe(reload({
             stream: true
@@ -104,8 +106,8 @@ gulp.task('testHtml', ['build'], () => {
     return ajsweb.buildIndexTest({
         dest: dest,
         minimal: minimal,
-        bootstrap: <%= includeBootstrap %>,
-        sass: <%= includeSass %>
+        bootstrap: bootstrap,
+        sass: sass
     });
 });
 

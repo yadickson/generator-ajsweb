@@ -25,14 +25,13 @@ module.exports = class extends Generator {
             desc: 'Disable yosay console (default: false)'
         });
 
-        this.option('sass', {
+        this.option('disableSass', {
             desc: 'Enable sass (default: false)'
         });
 
-        this.includeSass = this.options.sass || false;
-        this.includeBootstrap = this.options.sass || !this.options.disableBootstrap;
+        this.includeSass = !this.options.disableSass;
+        this.includeBootstrap = this.includeSass || !this.options.disableBootstrap;
         this.console = !this.options.disableConsole;
-
         this.appname = this.options.appname || this.appname;
     }
 
