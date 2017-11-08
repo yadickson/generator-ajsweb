@@ -128,9 +128,6 @@ Available generators:
 * [ajsweb:value](#value)
 * [ajsweb:constant](#constant)
 * [ajsweb:decorator](#decorator)
-
-Unavailable generators:
-
 * [ajsweb:component](#component)
 
 
