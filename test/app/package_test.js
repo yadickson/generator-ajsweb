@@ -34,8 +34,7 @@ describe('generator-ajsweb:app', () => {
             helpers.run(path.join(__dirname, '../../generators/app'))
                 .withOptions({
                     disableSass: true,
-                    disableBootstrap: true,
-                    disableConsole: true
+                    disableBootstrap: true
                 })
                 .withPrompts({})
                 .on('end', done);
