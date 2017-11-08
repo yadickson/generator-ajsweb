@@ -15,8 +15,7 @@ describe('generator-angularng:app', () => {
         it('should contain necessary dependencies', () => {
             [
                 'bootstrap',
-                'bootstrap-sass',
-                'gulp-sass'
+                'bootstrap-sass'
             ]
             .forEach((task) => {
                 assert.fileContent('package.json', '"' + task + '":');

@@ -29,7 +29,7 @@ module.exports = class extends Generator {
             desc: 'Enable sass (default: false)'
         });
 
-        this.includeSass = this.options.sass;
+        this.includeSass = this.options.sass || false;
         this.includeBootstrap = this.options.sass || !this.options.disableBootstrap;
         this.console = !this.options.disableConsole;
 
