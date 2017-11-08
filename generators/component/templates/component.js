@@ -10,8 +10,13 @@
      */
     angular.module('<%= projectModule %>')
         .component('<%= varname %>', {
-            templateUrl: 'views/<%= template %>',
-            controller: <%= ctrlname %>
+            bindings: {
+                myBinding: '@'
+            },
+            controller: function() {
+                this.myTitle = '<%= name %>';
+            },
+            template: '<h1>{{ $ctrl.myTitle }} {{ $ctrl.myBinding }}</h1>'
         });
 
 })();

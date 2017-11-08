@@ -2,9 +2,6 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
-const fs = require('file-system');
-const format = require("string-template")
-const uppercamelcase = require('uppercamelcase');
 const camelize = require('camelize');
 const decamelize = require('decamelize');
 
@@ -24,14 +21,11 @@ module.exports = class extends Generator {
         });
 
         this.name = this.options.name || 'none';
-        this.description = "Template for " + this.name;
         this.console = !this.options.disableConsole;
 
         this.varname = camelize(this.name);
         this.componentname = this.varname + "Component";
-        this.ctrlname = uppercamelcase(this.name) + 'Ctrl';
-        this.template = decamelize(camelize(this.name)) + '.html';
-
+        this.htmlname = "data-" + decamelize(camelize(this.varname)).replace("_", "-"); 
         this.file = decamelize(camelize(this.componentname)) + '.js';
         this.filetest = decamelize(camelize(this.componentname)) + '_test.js';
 
@@ -55,8 +49,6 @@ module.exports = class extends Generator {
             this.destinationPath('app/scripts/components/' + this.file), {
                 varname: this.varname,
                 name: this.componentname,
-                ctrlname: this.ctrlname,
-                template: this.template,
                 projectModule: this.projectModule,
                 license: this.license
             }
@@ -69,8 +61,7 @@ module.exports = class extends Generator {
             this.destinationPath('test/spec/components/' + this.filetest), {
                 varname: this.varname,
                 name: this.componentname,
-                ctrlname: this.ctrlname,
-                template: this.template,
+                htmlname: this.htmlname,
                 projectModule: this.projectModule,
                 license: this.license
             }
