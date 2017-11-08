@@ -48,32 +48,32 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'name',
             message: 'Your project name',
-            default: this.appname
+            default: this.config.get('name') || this.appname
         }, {
             type: 'input',
             name: 'description',
             message: 'Description',
-            default: answers => 'Description of ' + answers.name
+            default: this.config.get('description')
         }, {
             type: 'input',
             name: 'author',
             message: 'Author',
-            default: answers => 'Author of ' + answers.name
+            default: this.config.get('author')
         }, {
             type: 'input',
             name: 'email',
             message: 'Email',
-            default: answers => 'Email of ' + answers.author
+            default: this.config.get('email')
         }, {
             type: 'input',
             name: 'license',
             message: 'License',
-            default: 'GPL-3.0'
+            default: this.config.get('license') || 'GPL-3.0'
         }, {
             type: 'input',
             name: 'username',
             message: 'What\'s your GitHub username',
-            default: ''
+            default: this.config.get('username')
         }];
 
         return this.prompt(prompts).then(props => {
