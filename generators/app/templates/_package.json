@@ -20,6 +20,8 @@
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-ajsweb": "^1.0.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.5",
     "karma": "^1.7.1",
     "karma-bro": "^0.11.1",
     "karma-chai": "^0.1.0",

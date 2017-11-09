@@ -6,6 +6,7 @@ const runSequence = require('run-sequence');
 const reload = browserSync.reload;
 const karma = require('karma').Server;
 const del = require('del');
+const jshint = require("gulp-jshint");
 const ajsweb = require("gulp-ajsweb");
 
 let dev = true;
@@ -18,7 +19,7 @@ gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip']);
 });
 
-gulp.task('compile', ['fonts', 'images', 'icon', 'views'], () => {});
+gulp.task('compile', ['fonts', 'images', 'icon', 'views', 'jshint'], () => {});
 
 gulp.task('default', ['build'], () => {});
 
@@ -80,6 +81,12 @@ gulp.task('views', () => {
         .pipe(reload({
             stream: true
         }));
+});
+
+gulp.task('jshint', () => {
+    return ajsweb.appScripts()
+        .pipe(jshint())
+        .pipe(jshint.reporter());
 });
 
 gulp.task('images', () => {

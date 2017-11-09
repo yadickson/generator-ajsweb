@@ -13,5 +13,9 @@ describe('generator-ajsweb:app', () => {
                 .withPrompts({})
                 .on('end', done);
         });
+
+        it('creates gulpfile.js', () => {
+            assert.file(['gulpfile.js']);
+        });
     });
 });
