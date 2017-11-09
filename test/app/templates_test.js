@@ -55,10 +55,6 @@ describe('generator-ajsweb:app', () => {
             assert.file(['app/scripts/main.js']);
         });
 
-        it('creates app/scripts/main_cfg.js', () => {
-            assert.file(['app/scripts/main_cfg.js']);
-        });
-
         it('creates app/styles/README', () => {
             assert.file(['app/styles/README']);
         });

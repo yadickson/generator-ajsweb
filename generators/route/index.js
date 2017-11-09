@@ -58,7 +58,7 @@ module.exports = class extends Generator {
 
     _addRoute() {
 
-        var path = 'app/scripts/main_cfg.js';
+        var path = 'app/scripts/main.js';
 
         var template = `                .state('{name}', {
                     parent: 'root',
