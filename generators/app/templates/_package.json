@@ -19,7 +19,7 @@
     "coveralls": "^3.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
-    "gulp-ajsweb": "^1.0.0",
+    "gulp-ajsweb": "^1.0.8",
     "gulp-jshint": "^2.0.4",
     "jshint": "^2.9.5",
     "karma": "^1.7.1",
@@ -35,6 +35,7 @@
     "run-sequence": "^1.2.2"
   },
   "scripts": {
+    "docs": "gulp docs",
     "clean": "gulp clean",
     "test": "gulp test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"

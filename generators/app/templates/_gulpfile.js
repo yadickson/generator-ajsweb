@@ -16,7 +16,7 @@ let bootstrap = <%= includeBootstrap %>;
 let sass = <%= includeSass %>;
 
 gulp.task('clean', () => {
-    return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip']);
+    return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
 });
 
 gulp.task('compile', ['fonts', 'images', 'icon', 'views', 'jshint'], () => {});
@@ -119,7 +119,10 @@ gulp.task('testHtml', ['build'], () => {
 });
 
 gulp.task('pretest', ['clean'], function() {
-    return ajsweb.updateKarmaFile();
+    return ajsweb.updateKarmaFile({
+        configFile: 'karma.conf.js',
+        dest: '.'
+    });
 });
 
 gulp.task('test', ['pretest'], function() {
@@ -127,6 +130,12 @@ gulp.task('test', ['pretest'], function() {
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
     }).start();
+});
+
+gulp.task('docs', ['clean'], function() {
+    return ajsweb.buildDocs({
+        dest: 'docs'
+    });
 });
 
 gulp.task('serve', ['build'], () => {
@@ -169,4 +178,17 @@ gulp.task('serve:test', ['testHtml'], () => {
 
     gulp.watch(ajsweb.paths.appScripts, ['scripts']);
     gulp.watch([ajsweb.paths.appTests, dest + '/*.html']).on('change', reload);
+});
+
+gulp.task('serve:docs', ['docs'], () => {
+    browserSync.init({
+        notify: false,
+        port: 9000,
+        ui: false,
+        server: {
+            baseDir: './docs',
+            index: "index.html"
+        }
+    });
+
 });
