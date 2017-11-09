@@ -2,13 +2,17 @@
     'use strict';
 
     /**
-     * @ngdoc Component
+     * @ngdoc component
      * @name <%= projectModule %>.component:<%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Component of the <%= projectModule %>
+     * Description of the component <%= varname %>
+     *
+     * @example
+     * <<%= htmlname %> data-my-binding="{{outside}}"></<%= htmlname %>>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .component('<%= varname %>', {
             bindings: {
                 myBinding: '@'
