@@ -2,13 +2,13 @@
     'use strict';
 
     /**
-     * @ngdoc service
+     * @ngdoc function
      * @name <%= projectModule %>.decorator:<%= varname %>
      *
      * @requires <%= varname %>
      *
      * @description
-     * Description of the decorator <%= varname %>
+     * Description of the decorator to <%= varname %>
      */
     angular
         .module('<%= projectModule %>')
