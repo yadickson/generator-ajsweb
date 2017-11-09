@@ -2,13 +2,14 @@
     'use strict';
 
     /**
-     * @ngdoc Controller
+     * @ngdoc controller
      * @name <%= projectModule %>.controller:<%= name %>
+     *
      * @description
-     * # <%= name %>
-     * Controller of the <%= projectModule %>
+     * Description of the controller <%= name %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .controller('<%= name %>', function() {
             this.awesomeThings = [
                 'HTML5 Boilerplate',

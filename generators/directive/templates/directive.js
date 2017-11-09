@@ -2,13 +2,19 @@
     'use strict';
 
     /**
-     * @ngdoc Directive
+     * @ngdoc directive
      * @name <%= projectModule %>.directive:<%= varname %>
+     * @scope
+     * @restrict E
+     *
      * @description
-     * # <%= varname %>
-     * Directive of the <%= projectModule %>
+     * Description of the directive # <%= varname %>
+     * 
+     * @example
+     * <<%= htmlname %>></<%= htmlname %>>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .directive('<%= varname %>', function() {
 
             return {

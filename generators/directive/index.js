@@ -49,6 +49,7 @@ module.exports = class extends Generator {
             this.destinationPath('app/scripts/directives/' + this.file), {
                 varname: this.varname,
                 name: this.directivename,
+                htmlname: this.htmlname,
                 projectModule: this.projectModule,
                 license: this.license
             }

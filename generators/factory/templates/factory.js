@@ -2,13 +2,14 @@
     'use strict';
 
     /**
-     * @ngdoc Factory
+     * @ngdoc service
      * @name <%= projectModule %>.factory:<%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Factory of the <%= projectModule %>
+     * Description of the factory <%= varname %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .factory('<%= varname %>', function() {
             // Service logic
             // ...

@@ -2,13 +2,14 @@
     'use strict';
 
     /**
-     * @ngdoc Provider
+     * @ngdoc service
      * @name <%= projectModule %>.provider:<%= name %>
+     *
      * @description
-     * # <%= name %>
-     * Provider of the <%= projectModule %>
+     * Description of the provider <%= name %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .provider('<%= varname %>', function() {
 
             // Private variables

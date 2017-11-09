@@ -2,13 +2,17 @@
     'use strict';
 
     /**
-     * @ngdoc Filter
+     * @ngdoc filter
      * @name <%= projectModule %>.filter:<%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Filter of the <%= projectModule %>
+     * Description of the filter <%= varname %>
+     * 
+     * @example
+     * {{ foo | <%= varname %> }}
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .filter('<%= varname %>', function() {
             return function(input) {
                 return '<%= varname %> filter: ' + input;

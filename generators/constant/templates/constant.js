@@ -2,13 +2,14 @@
     'use strict';
 
     /**
-     * @ngdoc Constant
+     * @ngdoc service
      * @name <%= projectModule %>.constant:<%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Constant of the <%= projectModule %>
+     * Description of the constant <%= varname %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .constant('<%= varname %>', '<%= name %>');
 
 })();

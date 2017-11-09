@@ -2,13 +2,14 @@
     'use strict';
 
     /**
-     * @ngdoc Value
+     * @ngdoc service
      * @name <%= projectModule %>.value:<%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Value of the <%= projectModule %>
+     * Description of the value <%= varname %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .value('<%= varname %>', '<%= name %>');
 
 })();

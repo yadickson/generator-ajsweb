@@ -2,13 +2,16 @@
     'use strict';
 
     /**
-     * @ngdoc Decorator
+     * @ngdoc service
      * @name <%= projectModule %>.decorator:<%= varname %>
+     *
+     * @requires <%= varname %>
+     *
      * @description
-     * # <%= varname %>
-     * Decorator of the <%= projectModule %> for <%= varname %>
+     * Description of the decorator <%= varname %>
      */
-    angular.module('<%= projectModule %>')
+    angular
+        .module('<%= projectModule %>')
         .config(['$provide', function($provide) {
             $provide.decorator('<%= varname %>', ['$delegate', function($delegate) {
                 // decorate the $delegate
