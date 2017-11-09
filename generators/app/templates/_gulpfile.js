@@ -39,6 +39,14 @@ gulp.task('dist', () => {
     });
 });
 
+gulp.task('docs', () => {
+    return new Promise(resolve => {
+        minimal = true;
+        dest = 'docs';
+        runSequence(['clean'], ['compile'], ['js2docs'], resolve);
+    });
+});
+
 gulp.task('scripts', () => {
     return ajsweb.buildScripts({
             dest: dest,
@@ -109,6 +117,12 @@ gulp.task('icon', () => {
         }));
 });
 
+gulp.task('js2docs', function() {
+    return ajsweb.buildDocs({
+        dest: dest
+    });
+});
+
 gulp.task('testHtml', ['build'], () => {
     return ajsweb.buildIndexTest({
         dest: dest,
@@ -130,12 +144,6 @@ gulp.task('test', ['pretest'], function() {
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
     }).start();
-});
-
-gulp.task('docs', ['clean'], function() {
-    return ajsweb.buildDocs({
-        dest: 'docs'
-    });
 });
 
 gulp.task('serve', ['build'], () => {
@@ -186,7 +194,7 @@ gulp.task('serve:docs', ['docs'], () => {
         port: 9000,
         ui: false,
         server: {
-            baseDir: './docs',
+            baseDir: dest,
             index: "index.html"
         }
     });

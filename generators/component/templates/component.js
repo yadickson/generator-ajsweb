@@ -9,7 +9,12 @@
      * Description of the component <%= varname %>
      *
      * @example
-     * <<%= htmlname %> data-my-binding="{{outside}}"></<%= htmlname %>>
+       <example module="<%= projectModule %>">
+           <file name="index.html">
+               <input type='text' data-ng-model="outside" />
+               <<%= htmlname %> data-my-binding="{{outside}}"></<%= htmlname %>>
+           </file>
+       </example>
      */
     angular
         .module('<%= projectModule %>')

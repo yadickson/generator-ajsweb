@@ -9,7 +9,13 @@
      * Description of the filter <%= varname %>
      * 
      * @example
-     * {{ foo | <%= varname %> }}
+       <example module="<%= projectModule %>">
+           <file name="index.html">
+               <div ng-repeat="i in [1,2,3]">
+                   {{ i | <%= varname %>}}
+                </div>
+           </file>
+       </example>
      */
     angular
         .module('<%= projectModule %>')

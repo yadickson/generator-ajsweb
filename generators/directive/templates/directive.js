@@ -11,7 +11,11 @@
      * Description of the directive <%= varname %>
      * 
      * @example
-     * <<%= htmlname %>></<%= htmlname %>>
+       <example module="<%= projectModule %>">
+           <file name="index.html">
+               <<%= htmlname %>></<%= htmlname %>>
+           </file>
+       </example>
      */
     angular
         .module('<%= projectModule %>')
