@@ -3,10 +3,10 @@
 
     /**
      * @ngdoc service
-     * @name <%= projectModule %>.provider:<%= name %>
+     * @name <%= projectModule %>.provider:<%= varname %>
      *
      * @description
-     * Description of the provider <%= name %>
+     * Description of the provider <%= varname %>
      */
     angular
         .module('<%= projectModule %>')

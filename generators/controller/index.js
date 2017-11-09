@@ -45,7 +45,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('controller.js'),
             this.destinationPath('app/scripts/controllers/' + this.file), {
-                name: this.ctrlname,
+                varname: this.ctrlname,
                 projectModule: this.projectModule,
                 license: this.license
             }
@@ -56,7 +56,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('controller_test.js'),
             this.destinationPath('test/spec/controllers/' + this.filetest), {
-                name: this.ctrlname,
+                varname: this.ctrlname,
                 projectModule: this.projectModule,
                 license: this.license
             }

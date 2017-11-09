@@ -8,7 +8,7 @@
      * @restrict E
      *
      * @description
-     * Description of the directive # <%= varname %>
+     * Description of the directive <%= varname %>
      * 
      * @example
      * <<%= htmlname %>></<%= htmlname %>>

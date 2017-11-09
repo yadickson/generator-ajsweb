@@ -1,7 +1,7 @@
   (function() {
       'use strict';
 
-      describe('Provider:<%= name %>', function() {
+      describe('Provider:<%= varname %>', function() {
           describe('Test module and provider', function() {
 
               // instantiate provider

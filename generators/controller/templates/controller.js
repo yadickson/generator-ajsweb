@@ -3,14 +3,14 @@
 
     /**
      * @ngdoc controller
-     * @name <%= projectModule %>.controller:<%= name %>
+     * @name <%= projectModule %>.controller:<%= varname %>
      *
      * @description
-     * Description of the controller <%= name %>
+     * Description of the controller <%= varname %>
      */
     angular
         .module('<%= projectModule %>')
-        .controller('<%= name %>', function() {
+        .controller('<%= varname %>', function() {
             this.awesomeThings = [
                 'HTML5 Boilerplate',
                 'AngularJS',
