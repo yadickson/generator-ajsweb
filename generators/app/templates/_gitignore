@@ -8,3 +8,4 @@ yarn*
 *.tgz
 .karma.conf.js
 .nyc*
+.snyk*

@@ -72,3 +72,4 @@ coverage
 package-lock.json
 
 yar*
+.snyk*
