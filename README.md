@@ -112,6 +112,12 @@ gulp serve:test
 gulp clean
 ```
 
+## Docs
+
+```
+gulp docs
+```
+
 ## Generators
 
 Available generators:
