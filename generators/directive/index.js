@@ -9,7 +9,7 @@ module.exports = class extends Generator {
         this.argument('directivename', {
             type: String,
             required: true,
-            desc: '[DIrective name]'
+            desc: '[Directive name]'
         });
 
         this.option('disableConsole', {
