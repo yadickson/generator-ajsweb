@@ -55,8 +55,8 @@ describe('generator-ajsweb:app', () => {
                 .on('end', done);
         });
 
-        it('should gulpfile contain bootstrap enabled', () => {
-            assert.fileContent('gulpfile.js', 'let bootstrap = true;');
+        it('should gulpfile no contain bootstrap enabled', () => {
+            assert.noFileContent('gulpfile.js', 'let bootstrap = true;');
         });
 
         it('should gulpfile contain sass enabled', () => {

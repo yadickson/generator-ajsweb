@@ -29,7 +29,7 @@ module.exports = class extends Generator {
         });
 
         this.includeSass = !this.options.disableSass;
-        this.includeBootstrap = this.includeSass || !this.options.disableBootstrap;
+        this.includeBootstrap = !this.options.disableBootstrap;
         this.console = !this.options.disableConsole;
         this.appname = this.options.appname || this.appname;
     }

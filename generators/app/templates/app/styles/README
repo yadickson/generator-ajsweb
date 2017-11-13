@@ -1,1 +1,6 @@
 Place your style sheets here.
+
+Note:
+
+ - The global.scss is the first in the styles files included.
+ - The main.scss is the second in the styles files included.

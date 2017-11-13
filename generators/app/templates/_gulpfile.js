@@ -19,7 +19,7 @@ gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
 });
 
-gulp.task('compile', ['fonts', 'images', 'icon', 'views', 'jshint'], () => {});
+gulp.task('compile', ['scripts', 'styles', 'jshint', 'fonts', 'images', 'icon', 'views'], () => {});
 
 gulp.task('default', ['build'], () => {});
 
@@ -69,6 +69,12 @@ gulp.task('styles', () => {
         }));
 });
 
+gulp.task('jshint', () => {
+    return ajsweb.appScripts()
+        .pipe(jshint())
+        .pipe(jshint.reporter());
+});
+
 gulp.task('fonts', () => {
     return ajsweb.buildFonts({
             dest: dest,
@@ -89,12 +95,6 @@ gulp.task('views', () => {
         .pipe(reload({
             stream: true
         }));
-});
-
-gulp.task('jshint', () => {
-    return ajsweb.appScripts()
-        .pipe(jshint())
-        .pipe(jshint.reporter());
 });
 
 gulp.task('images', () => {

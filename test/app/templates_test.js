@@ -59,6 +59,14 @@ describe('generator-ajsweb:app', () => {
             assert.file(['app/styles/README']);
         });
 
+        it('creates app/styles/global.scss', () => {
+            assert.file(['app/styles/global.scss']);
+        });
+
+        it('creates app/styles/main.scss', () => {
+            assert.file(['app/styles/main.scss']);
+        });
+
         it('creates app/index.html', () => {
             assert.file(['app/index.html']);
         });

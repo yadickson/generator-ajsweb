@@ -80,8 +80,8 @@ describe('generator-ajsweb:app', () => {
                 .on('end', done);
         });
 
-        it('should contain bootstrap dependency', () => {
-            assert.fileContent('package.json', '"bootstrap":');
+        it('should no contain bootstrap dependency', () => {
+            assert.noFileContent('package.json', '"bootstrap":');
         });
 
         it('should contain sass dependency', () => {

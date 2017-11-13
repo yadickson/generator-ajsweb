@@ -1,0 +1,9 @@
+// inject:sass
+// endinject
+
+a {
+    color: $link-color;
+    &:hover {
+        text-decoration: none;
+    }
+}
