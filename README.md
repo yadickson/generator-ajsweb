@@ -14,7 +14,7 @@ First, install [Yeoman](http://yeoman.io) and generator-ajsweb using [npm](https
 
 ```bash
 npm install -g yo
-npm install -g generator-ajsweb
+npm install -g generator-ajsweb generator-ajsbase
 ```
 
 ## List generators
