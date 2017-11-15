@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const camelize = require('camelize');
 const decamelize = require('decamelize');
+const pkg = require('package-json-utils');
 
 module.exports = class extends Generator {
 
@@ -40,7 +41,8 @@ module.exports = class extends Generator {
         this.console = !this.options.disableConsole;
         this.description = this.options.description !== undefined ? this.options.description : 'This is the view ' + this.name + '.';
         this.file = decamelize(camelize(this.name)) + '.html';
-        this.includeBootstrap = this.config.get('includeBootstrap');
+
+        this.includeBootstrap = JSON.stringify(pkg.getPackageJson()).indexOf('bootstrap') >= 0;
     }
 
     prompting() {
