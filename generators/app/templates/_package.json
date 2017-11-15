@@ -3,7 +3,11 @@
     "version": "<%= version %>",
     "description": "<%= description %>",
     "main": "",
-    "author": "<%= author %> <<%= email %>>",
+    "author": {
+        "name": "<%= author %>",
+        "email": "<%= email %>"<% if (username) { %>,
+        "url": "https://github.com/<%= username %>"<% } %>
+    },
     "license": "<%= license %>",
     "dependencies": {
         "angular": "~1.6.1",
