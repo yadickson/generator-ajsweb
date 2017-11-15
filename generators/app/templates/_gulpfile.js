@@ -51,10 +51,7 @@ gulp.task('scripts', () => {
     return ajsweb.buildScripts({
             dest: dest,
             minimal: minimal
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('styles', () => {
@@ -63,10 +60,7 @@ gulp.task('styles', () => {
             minimal: minimal,
             bootstrap: bootstrap,
             sass: sass
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('jshint', () => {
@@ -79,10 +73,7 @@ gulp.task('fonts', () => {
     return ajsweb.buildFonts({
             dest: dest,
             minimal: minimal
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('views', () => {
@@ -91,30 +82,21 @@ gulp.task('views', () => {
             minimal: minimal,
             bootstrap: bootstrap,
             sass: sass
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('images', () => {
     return ajsweb.buildImages({
             dest: dest,
             minimal: minimal
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('icon', () => {
     return ajsweb.buildIcon({
             dest: dest,
             minimal: minimal
-        })
-        .pipe(reload({
-            stream: true
-        }));
+        });
 });
 
 gulp.task('js2docs', function() {
@@ -155,12 +137,12 @@ gulp.task('serve', ['build'], () => {
         }
     });
 
-    gulp.watch(ajsweb.paths.appScripts, ['scripts']);
-    gulp.watch(ajsweb.paths.appStyles, ['styles']);
-    gulp.watch(ajsweb.paths.appViews, ['views']);
-    gulp.watch(ajsweb.paths.appImages, ['images']);
-    gulp.watch(ajsweb.paths.appFonts, ['fonts']);
-    gulp.watch(ajsweb.paths.appIcon, ['icons']);
+    gulp.watch(ajsweb.paths.appScripts, ['scripts']).on('change', reload);
+    gulp.watch(ajsweb.paths.appStyles, ['styles']).on('change', reload);
+    gulp.watch(ajsweb.paths.appViews, ['views']).on('change', reload);
+    gulp.watch(ajsweb.paths.appImages, ['images']).on('change', reload);
+    gulp.watch(ajsweb.paths.appFonts, ['fonts']).on('change', reload);
+    gulp.watch(ajsweb.paths.appIcon, ['icons']).on('change', reload);
 });
 
 gulp.task('serve:dist', ['dist'], () => {
@@ -184,7 +166,7 @@ gulp.task('serve:test', ['testHtml'], () => {
         }
     });
 
-    gulp.watch(ajsweb.paths.appScripts, ['scripts']);
+    gulp.watch(ajsweb.paths.appScripts, ['scripts']).on('change', reload);
     gulp.watch([ajsweb.paths.appTests, dest + '/*.html']).on('change', reload);
 });
 
