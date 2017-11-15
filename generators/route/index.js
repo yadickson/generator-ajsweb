@@ -7,6 +7,7 @@ const format = require("string-template")
 const uppercamelcase = require('uppercamelcase');
 const camelize = require('camelize');
 const decamelize = require('decamelize');
+const stringJect = require('stringjector');
 
 module.exports = class extends Generator {
 
@@ -60,7 +61,9 @@ module.exports = class extends Generator {
 
         var path = 'app/scripts/main.js';
 
-        var template = `                .state('{name}', {
+        if (fs.existsSync(path) && fs.statSync(path).isFile()) {
+
+            var template = `                .state('{name}', {
                     parent: 'root',
                     url: '/{name}',
                     views: {
@@ -72,42 +75,14 @@ module.exports = class extends Generator {
                     }
                 })`;
 
-        var route = format(template, {
-            name: this.name,
-            ctrlname: this.ctrlname,
-            file: this.file
-        });
-
-        if (fs.existsSync(path) && fs.statSync(path).isFile()) {
-            var data = fs.readFileSync(path).toString().split("\n");
-            var line = 0;
-            var found = false;
-            var name = this.name;
-
-            data.forEach(function(item, index) {
-                if (!found && item.includes('// endinject')) {
-                    line = index;
-                }
-                if (!found) {
-                    found = item.includes("url: '/" + name + "'")
-                }
+            var route = format(template, {
+                name: this.name,
+                ctrlname: this.ctrlname,
+                file: this.file
             });
 
-            if (!found && line >= 0) {
+            new stringJect(path, '// endinject').before(route).saveSync();
 
-                data.splice(line, 0, route);
-                var text = data.join("\n");
-                fs.writeFileSync(path, text, function(err) {
-                    if (err) return this.log(err);
-                });
-
-            } else if (!found) {
-                var text = 'Please add tags ' + chalk.red('// inject:string') + ' and ' + chalk.red('// endinject');
-                this.log(this.console ? yosay(text) : text);
-            } else {
-                var text = 'Route ' + chalk.blue(name) + ' found';
-                this.log(this.console ? yosay(text) : text);
-            }
         } else {
             var text = 'The path file ' + chalk.red(path) + ' not found!';
             this.log(this.console ? yosay(text) : text);
