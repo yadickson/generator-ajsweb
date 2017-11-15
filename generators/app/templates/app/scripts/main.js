@@ -3,15 +3,15 @@
 
     /**
      * @ngdoc overview
-     * @name <%= projectModule %>
+     * @name <%= modulename %>
      *
      * @requires ui.router
      *
      * @description
-     * Description of the module <%= projectModule %>
+     * Description of the module <%= modulename %>
      */
     angular
-        .module('<%= projectModule %>', [
+        .module('<%= modulename %>', [
             'ui.router'
         ])
         .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {

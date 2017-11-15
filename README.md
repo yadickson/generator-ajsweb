@@ -15,13 +15,13 @@ First, install [Yeoman](http://yeoman.io) and generator-ajsweb using [npm](https
 Simply run a global install using your terminal and you're good to go!
 
 ```bash
-npm install -g yo generator-ajsweb generator-ajsbase
+npm install -g yo generator-ajsweb
 ```
 
 If you're a cool kid using Yarn then simply just use yarn as you would
 
 ```bash
-yarn global add yo generator-ajsweb generator-ajsbase
+yarn global add yo generator-ajsweb
 ```
 
 ## List generators

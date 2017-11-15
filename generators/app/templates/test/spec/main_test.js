@@ -5,7 +5,7 @@
 
     describe('Application', function() {
 
-      var moduleApp = angular.module('<%= projectModule %>');
+      var moduleApp = angular.module('<%= modulename %>');
 
       it('Check application module', function() {
         expect(moduleApp).to.exist;
@@ -15,7 +15,7 @@
 
     describe('Application Dependencies', function() {
 
-      var dependencies = angular.module('<%= projectModule %>').requires;
+      var dependencies = angular.module('<%= modulename %>').requires;
 
       it('Check ui-route', function() {
         expect(dependencies).to.be.an('array').that.includes('ui.router');
@@ -24,7 +24,7 @@
 
     describe('Application Mock', function() {
 
-      var moduleApp = angular.mock.module('<%= projectModule %>');
+      var moduleApp = angular.mock.module('<%= modulename %>');
 
       it('Check application module mock', function() {
         expect(moduleApp).to.exist;

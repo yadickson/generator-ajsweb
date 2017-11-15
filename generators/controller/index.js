@@ -1,9 +1,5 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
-const uppercamelcase = require('uppercamelcase');
-const decamelize = require('decamelize');
 
 module.exports = class extends Generator {
 
@@ -20,46 +16,14 @@ module.exports = class extends Generator {
             desc: 'Disable yosay console (default: false)'
         });
 
-        this.name = this.options.ctrlname || 'none';
+        this.name = this.options.ctrlname;
         this.console = !this.options.disableConsole;
-
-        this.ctrlname = uppercamelcase(this.name) + 'Ctrl';
-        this.file = decamelize(this.ctrlname) + '.js';
-        this.filetest = decamelize(this.ctrlname) + '_test.js';
-
-        this.projectModule = this.config.get('projectModule');
-        this.license = this.config.get('license');
     }
 
-    prompting() {
-        var text = 'Making the controller ' + chalk.blue(this.name);
-        this.log(this.console ? yosay(text) : text);
-    }
-
-    writing() {
-        this._writingController();
-        this._writingTest();
-    }
-
-    _writingController() {
-        this.fs.copyTpl(
-            this.templatePath('controller.js'),
-            this.destinationPath('app/scripts/controllers/' + this.file), {
-                varname: this.ctrlname,
-                projectModule: this.projectModule,
-                license: this.license
-            }
-        );
-    }
-
-    _writingTest() {
-        this.fs.copyTpl(
-            this.templatePath('controller_test.js'),
-            this.destinationPath('test/spec/controllers/' + this.filetest), {
-                varname: this.ctrlname,
-                projectModule: this.projectModule,
-                license: this.license
-            }
-        );
+    install() {
+        this.composeWith(require.resolve('generator-ajsbase/generators/controller'), {
+            arguments: [this.name, 'app/scripts'],
+            disableConsole: !this.console
+        });
     }
 };
