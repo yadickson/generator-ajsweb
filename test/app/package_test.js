@@ -11,7 +11,8 @@ describe('generator-ajsweb:app', () => {
                 .withPrompts({
                     description: 'app description',
                     author: 'app author',
-                    email: 'email@domain.com'
+                    email: 'email@domain.com',
+                    username: 'username'
                 })
                 .on('end', done);
         });
@@ -24,8 +25,16 @@ describe('generator-ajsweb:app', () => {
             assert.fileContent('package.json', '"description": "app description"');
         });
 
-        it('should package contain author', () => {
-            assert.fileContent('package.json', '"author": "app author <email@domain.com>"');
+        it('should package contain author name', () => {
+            assert.fileContent('package.json', '"name": "app author"');
+        });
+
+        it('should package contain author email', () => {
+            assert.fileContent('package.json', '"email": "email@domain.com"');
+        });
+
+        it('should package contain author url', () => {
+            assert.fileContent('package.json', '"url": "https://github.com/username"');
         });
     });
 

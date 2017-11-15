@@ -140,6 +140,7 @@ module.exports = class extends Generator {
                 author: this.author,
                 email: this.email,
                 license: this.license,
+                username: this.username,
                 includeSass: this.includeSass,
                 includeBootstrap: this.includeBootstrap
             }
