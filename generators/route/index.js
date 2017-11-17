@@ -63,7 +63,8 @@ module.exports = class extends Generator {
 
         if (fs.existsSync(path) && fs.statSync(path).isFile()) {
 
-            var skip = fs.readFileSync(path).toString().indexOf('.state(' + this.name + ',') >= 0;
+            var buffer = fs.readFileSync(path).toString().replace(/\r?\n|\r/g," ");
+            var skip = buffer.indexOf('state(\'' + this.name + '\',') >= 0;
 
             if (!skip) {
 
@@ -86,6 +87,7 @@ module.exports = class extends Generator {
                 });
 
                 new stringJect(path, '// endinject').before(route).saveSync();
+
             }
 
         } else {
