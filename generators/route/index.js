@@ -63,7 +63,11 @@ module.exports = class extends Generator {
 
         if (fs.existsSync(path) && fs.statSync(path).isFile()) {
 
-            var template = `                .state('{name}', {
+            var skip = fs.readFileSync(path).toString().indexOf('.state(' + this.name + ',') >= 0;
+
+            if (!skip) {
+
+                var template = `                .state('{name}', {
                     parent: 'root',
                     url: '/{name}',
                     views: {
@@ -75,13 +79,14 @@ module.exports = class extends Generator {
                     }
                 })`;
 
-            var route = format(template, {
-                name: this.name,
-                ctrlname: this.ctrlname,
-                file: this.file
-            });
+                var route = format(template, {
+                    name: this.name,
+                    ctrlname: this.ctrlname,
+                    file: this.file
+                });
 
-            new stringJect(path, '// endinject').before(route).saveSync();
+                new stringJect(path, '// endinject').before(route).saveSync();
+            }
 
         } else {
             var text = 'The path file ' + chalk.red(path) + ' not found!';
