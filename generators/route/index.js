@@ -42,7 +42,7 @@ module.exports = class extends Generator {
         this.addImage = this.options.addImage;
         this.addHelp = this.options.addHelp;
         this.console = !this.options.disableConsole;
-        this.description = this.options.description;
+        this.description = this.options.description || '';
 
         this.ctrlname = uppercamelcase(this.name) + 'Ctrl';
         this.file = decamelize(camelize(this.name)) + '.html';

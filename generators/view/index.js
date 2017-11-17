@@ -39,7 +39,7 @@ module.exports = class extends Generator {
         this.addImage = this.options.addImage;
         this.addHelp = this.options.addHelp;
         this.console = !this.options.disableConsole;
-        this.description = this.options.description !== undefined ? this.options.description : 'This is the view ' + this.name + '.';
+        this.description = this.options.description !== undefined && this.options.description.length > 0 ? this.options.description : 'This is the view ' + this.name + '.';
         this.file = decamelize(camelize(this.name)) + '.html';
 
         this.includeBootstrap = JSON.stringify(pkg.getPackageJson()).indexOf('bootstrap') >= 0;
