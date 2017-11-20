@@ -19,7 +19,7 @@ npm install -g yo
 Then generate your new project:
 
 ```bash
-yo angularng
+yo ajsweb
 ```
 
 ## Getting To Know Yeoman
@@ -28,7 +28,7 @@ yo angularng
  * Yeoman is a person with feelings and opinions, but is very easy to work with.
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
- * Documentation on [AngularNG](https://github.com/yadickson/generator-angularng).
+ * Documentation on [AngularJS Web](https://github.com/yadickson/generator-ajsweb#readme).
 
 <% if (license) { %>
 ## License
