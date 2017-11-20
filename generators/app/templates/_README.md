@@ -6,7 +6,6 @@
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![dependencies][dependencies-image]][dependencies-url]
 [![dev-dependencies][dev-dependencies-image]][dev-dependencies-url]
-[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 <% } %>
 ## Installation
 
@@ -47,7 +46,4 @@ yo ajsweb
 
 [dev-dependencies-image]: https://david-dm.org/<%= username %>/<%= name %>/dev-status.svg
 [dev-dependencies-url]: https://david-dm.org/<%= username %>/<%= name %>?type=dev&view=list
-
-[vulnerabilities-image]: https://snyk.io/package/npm/<%= name %>/badge.svg
-[vulnerabilities-url]: https://snyk.io/package/npm/<%= name %>
 <% } %>
