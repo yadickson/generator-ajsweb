@@ -70,7 +70,7 @@ module.exports = class extends Generator {
 
                 var template = `                .state('{name}', {
                     parent: 'root',
-                    url: '/{name}',
+                    url: '/{url}',
                     views: {
                         'main@': {
                             controller: '{ctrlname}',
@@ -81,7 +81,8 @@ module.exports = class extends Generator {
                 })`;
 
                 var route = format(template, {
-                    name: this.name,
+                    name: uppercamelcase(this.name),
+                    url: this.name,
                     ctrlname: this.ctrlname,
                     file: this.file
                 });
