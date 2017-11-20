@@ -49,8 +49,8 @@ describe('generator-ajsweb:app', () => {
                 .on('end', done);
         });
 
-        it('should not contain bootstrap dependency', () => {
-            assert.noFileContent('package.json', '"bootstrap":');
+        it('should contain bootstrap dependency', () => {
+            assert.fileContent('package.json', '"bootstrap":');
         });
 
         it('should not contain sass dependency', () => {
@@ -89,12 +89,12 @@ describe('generator-ajsweb:app', () => {
                 .on('end', done);
         });
 
-        it('should no contain bootstrap dependency', () => {
-            assert.noFileContent('package.json', '"bootstrap":');
+        it('should contain bootstrap dependency', () => {
+            assert.fileContent('package.json', '"bootstrap":');
         });
 
-        it('should contain sass dependency', () => {
-            assert.fileContent('package.json', '"bootstrap-sass":');
+        it('should not contain sass dependency', () => {
+            assert.noFileContent('package.json', '"bootstrap-sass":');
         });
     });
 

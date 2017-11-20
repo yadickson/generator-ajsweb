@@ -2,7 +2,6 @@
     "name": "<%= name %>",
     "version": "<%= version %>",
     "description": "<%= description %>",
-    "main": "",
     "author": {
         "name": "<%= author %>",
         "email": "<%= email %>"<% if (username) { %>,
@@ -11,13 +10,12 @@
     "license": "<%= license %>",
     "dependencies": {
         "angular": "~1.6.6",
-        "angular-ui-router": "~0.4.3",<% if (!includeSass && includeBootstrap) { %>
-        "bootstrap": "~3.3.0",<% } %>
+        "angular-ui-router": "~0.4.3",
+        "bootstrap": "~3.3.0",
         "jquery": "~3.2.1"
     },
     "devDependencies": {
-        "angular-mocks": "~1.6.6",<% if (includeSass) { %>
-        "bootstrap-sass": "^3.3.7",<% } %>
+        "angular-mocks": "~1.6.6",
         "browser-sync": "^2.18.13",
         "chai": "^4.1.2",
         "coveralls": "^3.0.0",
