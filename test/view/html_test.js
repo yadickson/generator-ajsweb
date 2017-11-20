@@ -23,7 +23,7 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view file not contain url', () => {
-            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-angularng#readme'>See AngularNG Generator Help</a>");
+            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularNG Generator Help</a>");
         });
 
     });
@@ -47,7 +47,7 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view file not contain help', () => {
-            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-angularng#readme'>See AngularNG Generator Help</a>");
+            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularNG Generator Help</a>");
         });
 
     });
@@ -71,7 +71,7 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view no file contain help', () => {
-            assert.fileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-angularng#readme'>See AngularNG Generator Help</a>");
+            assert.fileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularNG Generator Help</a>");
         });
 
     });
