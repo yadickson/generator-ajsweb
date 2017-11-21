@@ -3,7 +3,7 @@ module.exports = function(config) {
 
         basePath: '',
         // frameworks to use
-        frameworks: ['browserify', 'mocha', 'chai'],
+        frameworks: ['browserify', 'mocha', 'chai', 'sinon'],
 
         // list of files / patterns to load in the browser
 
@@ -11,7 +11,7 @@ module.exports = function(config) {
             // `gulp test` add all files automatically
         ],
 
-        reporters: ['progress', 'mocha', 'junit', 'coverage'],
+        reporters: ['progress', 'mocha', 'junit', 'coverage', 'istanbul'],
 
         hostname: 'localhost',
 
@@ -31,6 +31,14 @@ module.exports = function(config) {
             dir: 'coverage',
             reporters: [{
                 type: 'html',
+                subdir: '.'
+            }]
+        },
+
+        istanbulReporter: {
+            dir : 'coverage',
+            reporters: [{
+                type: 'lcov',
                 subdir: '.'
             }]
         },
