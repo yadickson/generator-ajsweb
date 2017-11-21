@@ -265,7 +265,7 @@ module.exports = class extends Generator {
 
         this._addRoute();
 
-        var text = 'Run ' + chalk.red('gulp serve') + ' to start web application';
+        var text = 'Check ' + chalk.red('README.md') + ' file';
         this.log(this.console ? yosay(text) : text);
 
     }
