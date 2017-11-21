@@ -1,7 +1,7 @@
 {
     "name": "<%= name %>",
     "version": "<%= version %>",
-    "description": "<%= description %>",<% if (username) { %>,
+    "description": "<%= description %>",<% if (username) { %>
     "homepage": "https://github.com/<%= username %>/<%= name %>",<% } %>
     "author": {
         "name": "<%= author %>",
