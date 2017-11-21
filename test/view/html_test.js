@@ -19,7 +19,7 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view file not contain image', () => {
-            assert.noFileContent('app/views/help.html', "<img src='images/image.png' alt='' />");
+            assert.noFileContent('app/views/help.html', "<img src='resource/image.png' alt='' />");
         });
 
         it('should view file not contain url', () => {
@@ -43,11 +43,11 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view file contain image', () => {
-            assert.fileContent('app/views/help.html', "<img src='images/image.png' alt='' />");
+            assert.fileContent('app/views/help.html', "<img src='resource/image.png' alt='' />");
         });
 
         it('should view file not contain help', () => {
-            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularNG Generator Help</a>");
+            assert.noFileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularJS Web Generator Help</a>");
         });
 
     });
@@ -67,11 +67,11 @@ describe('generator-ajsweb:view', () => {
         });
 
         it('should view file not contain image', () => {
-            assert.noFileContent('app/views/help.html', "<img src='images/image.png' alt='' />");
+            assert.noFileContent('app/views/help.html', "<img src='resource/image.png' alt='' />");
         });
 
         it('should view no file contain help', () => {
-            assert.fileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularNG Generator Help</a>");
+            assert.fileContent('app/views/help.html', "<a href='https://github.com/yadickson/generator-ajsweb#readme'>See AngularJS Web Generator Help</a>");
         });
 
     });
