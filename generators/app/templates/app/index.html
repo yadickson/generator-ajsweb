@@ -17,9 +17,9 @@
 <body>
 
   <div <% if (includeBootstrap) { %>class="container-fluid"<% } %>>
-    <div <% if (includeBootstrap) { %>class="header" <% } %>ui-view="header"></div>
-    <div <% if (includeBootstrap) { %>class="main" <% } %>ui-view="main"></div>
-    <div <% if (includeBootstrap) { %>class="footer" <% } %>ui-view="footer"></div>
+    <div <% if (includeBootstrap) { %>class="header" <% } %>data-ui-view="header"></div>
+    <div <% if (includeBootstrap) { %>class="main" <% } %>data-ui-view="main"></div>
+    <div <% if (includeBootstrap) { %>class="footer" <% } %>data-ui-view="footer"></div>
   </div>
 
   <!-- inject:js -->
