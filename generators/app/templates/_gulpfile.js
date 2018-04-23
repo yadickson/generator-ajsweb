@@ -134,7 +134,8 @@ gulp.task('testHtml', () => {
         dest: dest,
         minimal: minimal,
         bootstrap: bootstrap,
-        sass: sass
+        sass: sass,
+        addpaths: addpaths
     })
     .pipe(rename('index.html'))
     .pipe(gulp.dest(dest));
@@ -160,7 +161,7 @@ gulp.task('open', function(){
             uri: 'localhost:9100',
             app: 'firefox'
         }
-    )); 
+    ));
 });
 
 gulp.task('watch', function() {
@@ -195,4 +196,3 @@ gulp.task('serve:docs', function() {
         runSequence(['docs'], ['connect'], ['open'], resolve);
     });
 });
-
