@@ -15,7 +15,7 @@ let minimal = false;
 let dest = 'dist';
 let bootstrap = <%= includeBootstrap %>;
 let sass = <%= includeSass %>;
-let addpaths = ['node_modules/web3/dist/web3.js'];
+let addpaths = [];
 
 gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
@@ -118,7 +118,8 @@ gulp.task('js2docs', function() {
 gulp.task('karma-cnf', () => {
     return ajsweb.updateKarmaFile({
         configFile: 'karma.conf.js',
-        dest: '.'
+        dest: '.',
+        addpaths: addpaths
     });
 });
 
