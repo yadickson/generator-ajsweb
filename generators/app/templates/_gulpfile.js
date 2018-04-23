@@ -174,6 +174,10 @@ gulp.task('watch', function() {
     gulp.watch(ajsweb.paths.appIcon, ['icons']);
 });
 
+gulp.task('watchtest', function() {
+    gulp.watch(ajsweb.paths.appTests, ['scripts', 'testHtml']);
+});
+
 gulp.task('serve', function() {
     return new Promise(resolve => {
         runSequence(['build'], ['connect'], ['watch'], ['open'], resolve);
@@ -188,7 +192,7 @@ gulp.task('serve:dist', function() {
 
 gulp.task('serve:test', function() {
     return new Promise(resolve => {
-        runSequence(['test'], ['connect'], ['open'], resolve);
+        runSequence(['karma-cnf'], ['build'], ['testHtml'], ['connect'], ['watch'], ['watchtest'], ['open'], resolve);
     });
 });
 
