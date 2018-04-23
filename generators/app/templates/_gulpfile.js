@@ -15,6 +15,7 @@ let minimal = false;
 let dest = 'dist';
 let bootstrap = <%= includeBootstrap %>;
 let sass = <%= includeSass %>;
+let addpaths = ['node_modules/web3/dist/web3.js'];
 
 gulp.task('clean', () => {
     return del(['build', 'dist', 'coverage', 'reports', '*.tgz', '*.zip', 'docs']);
@@ -51,7 +52,8 @@ gulp.task('docs', () => {
 gulp.task('scripts', () => {
     return ajsweb.buildScripts({
             dest: dest,
-            minimal: minimal
+            minimal: minimal,
+            addpaths: addpaths
         })
         .pipe(connect.reload());
 });
@@ -85,7 +87,8 @@ gulp.task('views', () => {
             dest: dest,
             minimal: minimal,
             bootstrap: bootstrap,
-            sass: sass
+            sass: sass,
+            addpaths: addpaths
         })
         .pipe(connect.reload());
 });
