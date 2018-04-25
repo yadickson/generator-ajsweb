@@ -166,7 +166,7 @@ gulp.task('open', function(){
 });
 
 gulp.task('watch', function() {
-    gulp.watch(ajsweb.paths.appScripts, ['scripts']);
+    gulp.watch(ajsweb.paths.appScripts, ['scripts', 'jshint']);
     gulp.watch(ajsweb.paths.appStyles, ['styles']);
     gulp.watch(ajsweb.paths.appViews, ['views']);
     gulp.watch(ajsweb.paths.appImages, ['images']);
@@ -175,7 +175,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('watchtest', function() {
-    gulp.watch(ajsweb.paths.appTests, ['scripts', 'testHtml']);
+    gulp.watch(ajsweb.paths.appTests, ['scripts', 'jshint', 'testHtml']);
 });
 
 gulp.task('serve', function() {
