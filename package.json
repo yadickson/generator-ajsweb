@@ -1,6 +1,6 @@
 {
     "name": "generator-ajsweb",
-    "version": "1.5.8",
+    "version": "1.6.0",
     "description": "Yeoman Gulp generator for AngularJS Web Application",
     "homepage": "https://github.com/yadickson/generator-ajsweb",
     "author": {
@@ -25,7 +25,7 @@
     ],
     "main": "generators/app/index.js",
     "keywords": [
-        "yeoman gulp angularjs mocha chai karma",
+        "yeoman gulp angularjs mocha chai karma sinon",
         "yeoman-generator"
     ],
     "dependencies": {
@@ -34,7 +34,7 @@
         "command-exists": "^1.2.2",
         "decamelize": "^1.2.0",
         "file-system": "^2.2.2",
-        "generator-ajsbase": "~1.5.4",
+        "generator-ajsbase": "~1.6.0",
         "package-json-utils": "^1.1.0",
         "string-template": "^1.0.0",
         "stringjector": "^1.0.1",
