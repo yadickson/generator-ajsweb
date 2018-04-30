@@ -1,6 +1,7 @@
 node_modules
 build/
 dist/
+docs/
 coverage/
 reports/
 package-lock.json
@@ -9,3 +10,4 @@ yarn*
 .karma.conf.js
 .nyc*
 .snyk*
+*.zip
