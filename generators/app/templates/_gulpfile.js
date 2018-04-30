@@ -51,5 +51,5 @@ options = {
 };
 
 let gulp = require("gulp-ajsweb")(require('gulp'), options);
-gulp.task('default', false, ['help'], () => {});
+gulp.task('default', ['help'], () => {});
 
