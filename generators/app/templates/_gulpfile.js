@@ -14,8 +14,7 @@ let addtestpaths = [
 
 let excludepaths = [
   'node_modules/angular/index.js',
-  'node_modules/angular-animate/index.js',
-  'node_modules/angular-route/index.js'
+  'node_modules/angular-animate/index.js'
 ];
 
 let addcss = [
@@ -51,4 +50,3 @@ options = {
 
 let gulp = require("gulp-ajsweb")(require('gulp'), options);
 gulp.task('default', ['help'], () => {});
-
