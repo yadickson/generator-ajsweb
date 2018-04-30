@@ -13,45 +13,56 @@ This application use AngularJS, Bootstrap and Html5
 ## Prebuild application
 
 ```bash
-yarn install
+yarn install && yarn upgrade
 ```
 
-## Run application
-
-```bash
-gulp serve
-```
-
-```bash
-gulp serve:dist
-```
-
-## Test application
-
-```bash
-gulp test
-```
-
-```bash
-gulp serve:test
-```
-
-## Build application
+## Build project
 
 ```bash
 gulp build
 ```
 
-## Dist application
+## Dist project
 
 ```bash
 gulp dist
+
+```
+
+## Test project
+
+```bash
+gulp test
 ```
 
 ## Clean project
 
 ```bash
 gulp clean
+```
+
+## Run develop application on browser
+
+```bash
+gulp serve:build
+```
+
+## Run production application on browser
+
+```bash
+gulp serve:dist
+```
+
+## Test application on browser
+
+```bash
+gulp serve:test
+```
+
+## Documentation application on browser
+
+```bash
+gulp serve:docs
 ```
 
 ## Thanks

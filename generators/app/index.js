@@ -268,5 +268,8 @@ module.exports = class extends Generator {
         var text = 'Check ' + chalk.red('README.md') + ' file';
         this.log(this.console ? yosay(text) : text);
 
+        text = 'Run '+ chalk.red('gulp help') + 'command';
+        this.log(this.console ? yosay(text) : text);
+
     }
 };

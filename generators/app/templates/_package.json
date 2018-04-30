@@ -20,11 +20,15 @@
         "angular-mocks": "~1.6.6",
         "coveralls": "^3.0.0",
         "gulp": "^3.9.1",
-        "gulp-ajsweb": "~1.5.0",
+        "gulp-add-src": "^1.0.0",
+        "gulp-ajsweb": "~1.6.0",
+        "gulp-imagemin": "^4.1.0",
+        "gulp-ngdocs-components": "^0.1.4",
+        "gulp-order": "^1.1.1",
+        "gulp-sass": "^4.0.1",
         "karma": "^1.7.1"
     },
     "scripts": {
-        "docs": "gulp docs",
         "clean": "gulp clean",
         "test": "gulp test",
         "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"

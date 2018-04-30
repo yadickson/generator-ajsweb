@@ -46,9 +46,10 @@ options = {
   addcss: addcss,
   addscss: addscss,
   addfonts: addfonts,
-  orderBy: orderBy
+  orderBy: orderBy,
+  port: 9100
 };
 
-const ajsweb = require("gulp-ajsweb")(gulp, options);
+let gulp = require("gulp-ajsweb")(require('gulp'), options);
+gulp.task('default', false, ['help'], () => {});
 
-gulp.task('default', ['build'], () => {});
