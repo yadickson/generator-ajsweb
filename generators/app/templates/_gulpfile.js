@@ -5,7 +5,6 @@ const gulp = require('gulp');
 let addpaths = [
   'node_modules/angular/angular.js',
   'node_modules/angular-animate/angular-animate.js',
-  'node_modules/angular-route/angular-route.js',
   'node_modules/bootstrap/**/bootstrap.js'
 ];
 
