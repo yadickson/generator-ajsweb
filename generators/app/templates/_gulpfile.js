@@ -49,5 +49,5 @@ let options = {
   port: 9100
 };
 
-let gulp = require("gulp-ajsweb")(require('gulp'), options);
+let gulp = require('gulp-ajsweb')(require('gulp'), options);
 gulp.task('default', ['help'], () => {});
