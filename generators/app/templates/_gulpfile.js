@@ -1,10 +1,6 @@
 // generated on <%= date %> using <%= name %> <%= version %>
 
-const gulp = require('gulp');
-
 let addpaths = [
-  'node_modules/angular/angular.js',
-  'node_modules/angular-animate/angular-animate.js',
   'node_modules/bootstrap/**/bootstrap.js'
 ];
 
@@ -13,11 +9,11 @@ let addtestpaths = [
 ];
 
 let excludepaths = [
-  'node_modules/angular/index.js',
-  'node_modules/angular-animate/index.js'
+  // '!node_modules/project/index.js'
 ];
 
 let addcss = [
+  // 'node_modules/project/file.css'
 ];
 
 let addscss = [
@@ -25,19 +21,22 @@ let addscss = [
 ];
 
 let addfonts = [
+  // 'node_modules/project/file.ttf'
+];
 
+let notprocess = [
+   'jquery'
 ];
 
 let orderBy = [
-  '**/jquery.js',
-  '**/angular.js',
-  '**/angular-*.js',
-  '**/bootstrap.js',
-  '**/bootstrap-*.js',
-  '*'
+  'jquery.js',
+  'angular.js',
+  'angular-*.js',
+  'bootstrap.js',
+  'bootstrap-*.js'
 ];
 
-options = {
+let options = {
   addpaths: addpaths,
   addtestpaths: addtestpaths,
   excludepaths: excludepaths,
@@ -45,6 +44,8 @@ options = {
   addscss: addscss,
   addfonts: addfonts,
   orderBy: orderBy,
+  notprocess: notprocess,
+  browser: 'firefox',
   port: 9100
 };
 

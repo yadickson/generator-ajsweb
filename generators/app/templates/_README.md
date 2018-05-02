@@ -35,6 +35,12 @@ gulp dist
 gulp test
 ```
 
+## Docs project
+
+```bash
+gulp docs
+```
+
 ## Clean project
 
 ```bash
@@ -44,7 +50,7 @@ gulp clean
 ## Run develop application on browser
 
 ```bash
-gulp serve:build
+gulp serve
 ```
 
 ## Run production application on browser
@@ -63,6 +69,12 @@ gulp serve:test
 
 ```bash
 gulp serve:docs
+```
+
+## Help
+
+```bash
+gulp help
 ```
 
 ## Thanks

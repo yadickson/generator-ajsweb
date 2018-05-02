@@ -21,7 +21,7 @@
         "coveralls": "~3.0.0",
         "gulp": "~3.9.1",
         "gulp-add-src": "~1.0.0",
-        "gulp-ajsweb": "~1.6.5",
+        "gulp-ajsweb": "~1.6.8",
         "gulp-imagemin": "~4.1.0",
         "gulp-ngdocs-components": "~0.1.4",
         "gulp-order": "~1.1.1",
