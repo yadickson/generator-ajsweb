@@ -38,6 +38,8 @@ let orderBy = [
 
 let options = {
   target = './',
+  buildPath: 'build',
+  distPath: 'dist',
   addpaths: addpaths,
   addtestpaths: addtestpaths,
   excludepaths: excludepaths,

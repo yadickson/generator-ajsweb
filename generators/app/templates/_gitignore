@@ -11,3 +11,4 @@ yarn*
 .nyc*
 .snyk*
 *.zip
+vendor/
