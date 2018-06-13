@@ -37,6 +37,7 @@ let orderBy = [
 ];
 
 let options = {
+  target = './',
   addpaths: addpaths,
   addtestpaths: addtestpaths,
   excludepaths: excludepaths,
