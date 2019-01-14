@@ -37,7 +37,7 @@ let orderBy = [
 ];
 
 let options = {
-  target = './',
+  target: './',
   buildPath: 'build',
   distPath: 'dist',
   addpaths: addpaths,
