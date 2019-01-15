@@ -3,9 +3,6 @@
 
 [![TravisCI Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
-[![dependencies][dependencies-image]][dependencies-url]
-[![dev-dependencies][dev-dependencies-image]][dev-dependencies-url]
-[![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
 [![npm version][npm-image]][npm-url]
 
 ## Installation
@@ -265,15 +262,6 @@ GPL-3.0 © [Yadickson Soto](https://github.com/yadickson)
 
 [coveralls-image]: https://coveralls.io/repos/github/yadickson/generator-ajsweb/badge.svg
 [coveralls-url]: https://coveralls.io/github/yadickson/generator-ajsweb
-
-[dependencies-image]: https://david-dm.org/yadickson/generator-ajsweb/status.svg
-[dependencies-url]: https://david-dm.org/yadickson/generator-ajsweb?view=list
-
-[dev-dependencies-image]: https://david-dm.org/yadickson/generator-ajsweb/dev-status.svg
-[dev-dependencies-url]: https://david-dm.org/yadickson/generator-ajsweb?type=dev&view=list
-
-[vulnerabilities-image]: https://snyk.io/package/npm/generator-ajsweb/badge.svg
-[vulnerabilities-url]: https://snyk.io/package/npm/generator-ajsweb
 
 [npm-image]: https://badge.fury.io/js/generator-ajsweb.svg
 [npm-url]: https://badge.fury.io/js/generator-ajsweb

@@ -12,6 +12,10 @@ let excludepaths = [
   // '!node_modules/project/index.js'
 ];
 
+let excludetestpaths = [
+  // '!node_modules/angular/index.js'
+];
+
 let addcss = [
   // 'node_modules/project/file.css'
 ];
@@ -31,6 +35,7 @@ let notprocess = [
 let orderBy = [
   'jquery.js',
   'angular.js',
+  'angular-mocks.js',
   'angular-*.js',
   'bootstrap.js',
   'bootstrap-*.js'
@@ -43,14 +48,17 @@ let options = {
   addpaths: addpaths,
   addtestpaths: addtestpaths,
   excludepaths: excludepaths,
+  excludetestpaths: excludetestpaths,
   addcss: addcss,
   addscss: addscss,
   addfonts: addfonts,
   orderBy: orderBy,
   notprocess: notprocess,
   browser: 'firefox',
-  port: 9100
+  port: 9500,
+  karmaPort: 9600
 };
+
 
 let gulp = require('gulp-ajsweb')(require('gulp'), options);
 gulp.task('default', ['help'], () => {});
