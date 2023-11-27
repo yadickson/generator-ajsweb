@@ -40,8 +40,8 @@
     "stringjector": "^1.0.1",
     "upper-case": "^1.1.3",
     "uppercamelcase": "^3.0.0",
-    "yeoman-generator": "^2.0.1",
-    "yosay": "^2.0.0"
+    "yeoman-generator": "^5.0.0",
+    "yosay": "^3.0.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
